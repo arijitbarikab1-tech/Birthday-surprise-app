@@ -1,0 +1,2918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday My Queen! 💖🎂 Secret Surprise Vault</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rose-primary: #f43f5e;
+      --pink-primary: #ec4899;
+      --purple-accent: #a855f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    input, textarea, select {
+      user-select: text;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at top left, #fff1f2 0%, #fce7f3 40%, #f3e8ff 80%, #fff7ed 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      color: #1e293b;
+    }
+
+    .serif-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .handwritten {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Floating Background Elements */
+    .floating-item {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.38;
+      animation: floatUpward linear infinite;
+    }
+
+    @keyframes floatUpward {
+      0% {
+        transform: translateY(105vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% { opacity: 0.42; }
+      85% { opacity: 0.42; }
+      100% {
+        transform: translateY(-15vh) rotate(360deg) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    /* Main Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 30px;
+      box-shadow:
+        0 25px 60px -12px rgba(244, 63, 94, 0.2),
+        0 10px 25px -8px rgba(168, 85, 247, 0.12),
+        0 0 0 1.5px rgba(255, 255, 255, 0.96);
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .stage-section {
+      display: none;
+      animation: stageAppear 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .stage-section.active {
+      display: block;
+    }
+
+    @keyframes stageAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Romantic Gradient Buttons */
+    .btn-romantic {
+      background: linear-gradient(135deg, #fb7185 0%, #ec4899 50%, #d946ef 100%);
+      color: white;
+      box-shadow: 0 10px 24px -5px rgba(236, 72, 153, 0.5);
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
+    }
+
+    .btn-romantic:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 28px -5px rgba(236, 72, 153, 0.65);
+    }
+
+    .btn-romantic:active {
+      transform: scale(0.96);
+    }
+
+    /* Runaway No Button */
+    .btn-runaway {
+      background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      color: white;
+      box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.5);
+      transition: left 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  top 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.2s ease;
+    }
+
+    /* Scanner Pulse */
+    @keyframes radarPulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.6); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 22px rgba(244, 63, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+    }
+
+    .scanner-ring {
+      animation: radarPulse 1.8s infinite;
+    }
+
+    @keyframes scanLineMove {
+      0%, 100% { top: 8%; }
+      50% { top: 86%; }
+    }
+
+    .scan-laser {
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #f43f5e, #ec4899, transparent);
+      box-shadow: 0 0 10px #f43f5e;
+      animation: scanLineMove 1.3s ease-in-out infinite;
+    }
+
+    /* Polaroid Frame Styling */
+    .polaroid-card {
+      background: #ffffff;
+      padding: 10px 10px 16px 10px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px -6px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(244, 63, 94, 0.12);
+      transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .polaroid-card:hover {
+      transform: translateY(-4px) rotate(0deg) !important;
+      box-shadow: 0 18px 32px -8px rgba(244, 63, 94, 0.24);
+    }
+
+    .polaroid-card.voted-favorite {
+      border: 2.5px solid #f43f5e;
+      background: linear-gradient(180deg, #ffffff 0%, #fff1f2 100%);
+      box-shadow: 0 16px 32px -6px rgba(244, 63, 94, 0.32);
+    }
+
+    /* Selectable Chip / Option Card */
+    .selectable-card {
+      border: 2px solid #fce7f3;
+      background: #ffffff;
+      border-radius: 16px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .selectable-card:hover {
+      border-color: #f9a8d4;
+      background: #fff9fb;
+      transform: translateY(-2px);
+    }
+
+    .selectable-card.selected {
+      border-color: #f43f5e;
+      background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 100%);
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px -5px rgba(244, 63, 94, 0.25);
+    }
+
+    /* Trait Card */
+    .trait-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+      border: 1.5px solid #fbcfe8;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .trait-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -8px rgba(236, 72, 153, 0.25);
+      border-color: #f47280;
+    }
+
+    /* Candle Flame Flicker */
+    @keyframes flicker {
+      0%, 100% { transform: scaleY(1) scaleX(1) rotate(-2deg); opacity: 1; }
+      25% { transform: scaleY(1.12) scaleX(0.92) rotate(2deg); opacity: 0.92; }
+      50% { transform: scaleY(0.93) scaleX(1.06) rotate(-1deg); opacity: 1; }
+      75% { transform: scaleY(1.08) scaleX(0.95) rotate(3deg); opacity: 0.95; }
+    }
+
+    .candle-flame {
+      transform-origin: bottom center;
+      animation: flicker 0.55s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    @keyframes smokeRise {
+      0% { opacity: 0.8; transform: translateY(0) scale(0.8); }
+      100% { opacity: 0; transform: translateY(-28px) scale(1.6); }
+    }
+
+    .candle-smoke {
+      animation: smokeRise 1s ease-out forwards;
+    }
+
+    /* Envelope & Letter */
+    .envelope-box {
+      background: linear-gradient(135deg, #ffe4e6 0%, #fbcfe8 100%);
+      border: 2px solid #f9a8d4;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 32px -10px rgba(244, 63, 94, 0.25);
+    }
+
+    .letter-paper {
+      background: #fffdf9;
+      background-image: radial-gradient(#fce7f3 1px, transparent 1px);
+      background-size: 18px 18px;
+      border: 1.5px solid #f9a8d4;
+      border-radius: 22px;
+      box-shadow: inset 0 0 30px rgba(251, 207, 232, 0.25), 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+    }
+
+    .vip-pass {
+      background: linear-gradient(135deg, #fffdf9 0%, #fff1f2 55%, #fae8ff 100%);
+      border: 2px dashed #ec4899;
+      border-radius: 24px;
+      position: relative;
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      accent-color: #f43f5e;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fff1f2;
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f47280;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="relative flex flex-col items-center justify-center min-h-screen p-3 sm:p-5">
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+
+  <!-- Floating Background Hearts -->
+  <div id="floatingBg" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+  <!-- ==========================================
+       TOP NAVIGATION BAR (AUDIO + SKIP + STUDIO)
+       ========================================== -->
+  <header class="fixed top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-5 sm:right-5 flex items-center justify-between z-30 max-w-4xl mx-auto">
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <!-- Secret Triple-Tap Crown Icon (Opens Studio even when hidden in Her Mode!) -->
+      <button onclick="handleSecretCrownTap()" title="Crown Icon" class="w-9 h-9 rounded-full bg-white/90 border border-pink-200 shadow-sm flex items-center justify-center text-base hover:scale-105 transition">
+        👑
+      </button>
+
+      <button id="soundToggleBtn" onclick="toggleSound()" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-slate-700 text-xs font-bold shadow-sm border border-pink-200 transition">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel" class="hidden sm:inline">Sound On</span>
+      </button>
+
+      <button onclick="playHappyBirthdayMelody()" title="Play Birthday Tune" class="px-3 py-2 rounded-full bg-white/90 hover:bg-white text-pink-600 text-xs font-bold shadow-sm border border-pink-200 transition flex items-center gap-1">
+        <span>🎵</span>
+        <span class="hidden md:inline">B'day Tune</span>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <!-- Quick Skip / Next Page Button for Testing or Skipping -->
+      <button id="quickSkipBtn" onclick="skipCurrentStage()" class="px-3 py-2 rounded-full bg-white/90 hover:bg-rose-50 text-rose-600 border border-rose-200 text-xs font-bold shadow-sm transition flex items-center gap-1" title="Skip this page">
+        <span>Skip Page ⏭️</span>
+      </button>
+
+      <!-- Boyfriend Studio & Live Firebase Responses Button -->
+      <button id="creatorStudioBtn" onclick="openStudioModal('pages')" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 text-white text-xs sm:text-sm font-bold shadow-md shadow-pink-300/50 transition hover:scale-105 active:scale-95">
+        <span>⚙️</span>
+        <span id="creatorBtnLabel">Customize & Live Answers</span>
+        <span id="liveBadgeCount" class="hidden ml-1 px-1.5 py-0.2 bg-emerald-400 text-slate-900 rounded-full text-[10px] font-extrabold">LIVE</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN INTERACTIVE SURPRISE CONTAINER
+       ========================================== -->
+  <main class="relative z-20 w-full max-w-[520px] my-auto pt-12 pb-8">
+    <div id="mainCard" class="glass-card p-5 sm:p-7 text-center relative overflow-hidden">
+
+      <!-- Top Secret Code-Name Pill & Dynamic Progress Bar -->
+      <div class="flex flex-col items-center gap-2.5 mb-5">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-rose-50 to-purple-50 border border-pink-200 text-[11px] sm:text-xs font-bold text-pink-600 shadow-sm">
+          <span>💖 Special For:</span>
+          <span class="her-name-slot text-rose-600 font-extrabold">Suu</span>
+          <span class="text-slate-300">•</span>
+          <span class="her-codename-slot text-purple-600 font-extrabold">Madam Ji 👑</span>
+        </div>
+
+        <!-- Dynamic Stage Progress Dots (Only shows enabled stages!) -->
+        <div id="progressDots" class="flex flex-wrap items-center justify-center gap-1.5"></div>
+      </div>
+
+      <!-- ====================================================
+           STAGE 1: SECRET CODE-NAME & BIOMETRIC SCANNER
+           ==================================================== -->
+      <section id="stage-scanner" class="stage-section">
+        <div class="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          🔒 VIP Birthday Verification
+        </div>
+
+        <h1 id="st1Title" class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 leading-snug mb-2">
+          Ruko! Pehle Identity Verify Karo 🕵️‍♀️💖
+        </h1>
+
+        <p id="st1Subtitle" class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-4 px-1">
+          Yeh secret birthday portal sirf duniya ki sabse pyari (aur thodi si nakhre wali) Birthday Queen ke liye banaya gaya hai!
+        </p>
+
+        <!-- Target Profile Card -->
+        <div class="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 border-2 border-pink-200 rounded-2xl p-4 mb-4 text-left shadow-inner">
+          <div class="flex items-center justify-between border-b border-pink-200/70 pb-2 mb-2.5">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">VIP Queen Profile</span>
+            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">✨ 1 in 8 Billion</span>
+          </div>
+          <div class="space-y-1.5 text-xs sm:text-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-500">Birthday Queen Name:</span>
+              <span class="font-extrabold text-slate-800 her-name-slot">Suu</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-500">Secret Code Name:</span>
+              <span class="font-extrabold text-pink-600 bg-white px-2.5 py-0.5 rounded-lg border border-pink-200 shadow-sm her-codename-slot">Madam Ji 👑</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-500">Made With Love By:</span>
+              <span class="font-bold text-purple-600 his-name-slot">Arijit ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm font-semibold text-slate-600 mb-4">
+          👇 <span class="text-rose-600 font-bold">Verify Identity:</span> Niche Heart Scanner pe tap karo taaki pata chale aap hi asli <span class="her-codename-slot text-purple-600 font-bold">Madam Ji 👑</span> ho!
+        </p>
+
+        <!-- Heart Scanner Button -->
+        <div class="flex flex-col items-center justify-center my-2">
+          <button
+            id="scannerBtn"
+            onclick="startIdentityScan()"
+            class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-rose-500 via-pink-500 to-purple-500 p-1 shadow-xl scanner-ring flex items-center justify-center group focus:outline-none"
+          >
+            <div class="w-full h-full bg-white rounded-full flex flex-col items-center justify-center relative overflow-hidden">
+              <div id="scanLaser" class="scan-laser hidden"></div>
+              <span id="scannerEmoji" class="text-4xl sm:text-5xl transition-transform group-hover:scale-110">💖</span>
+              <span id="scannerBtnSub" class="text-[10px] font-extrabold uppercase tracking-wider text-pink-600 mt-1">Tap to Scan</span>
+            </div>
+          </button>
+
+          <p id="scanStatusText" class="mt-3 text-xs font-bold text-slate-500 min-h-[20px]">
+            Tap the Heart Scanner to unlock your surprise 🔐
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 2: MULTI-QUESTION RUNAWAY 'NO' TRAP (3-4 FUNNY QUESTIONS IN A ROW!)
+           ========================================================================= -->
+      <section id="stage-no-trap" class="stage-section">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-[11px] font-extrabold uppercase tracking-wider">
+            😜 Sachai Ka Test
+          </span>
+          <span id="noTrapRoundBadge" class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-extrabold">
+            Sawaal 1 / 4
+          </span>
+        </div>
+
+        <!-- Cute Animated SVG Character -->
+        <div class="relative mx-auto w-24 h-24 sm:w-28 sm:h-28 mb-3 rounded-3xl bg-gradient-to-tr from-rose-100 via-pink-100 to-purple-100 p-2 shadow-inner border-2 border-white flex items-center justify-center">
+          <span id="noTrapEmojiAvatar" class="text-5xl sm:text-6xl select-none transition-transform duration-300">👑</span>
+          <span class="absolute -bottom-1 -right-1 text-xl bg-white rounded-full p-1 shadow">🎂</span>
+        </div>
+
+        <h2 id="noTrapQuestionTitle" class="serif-heading text-lg sm:text-2xl font-bold text-slate-900 leading-snug mb-2 px-1">
+          Sabse pehle sach batao... iss duniya mein sabse zyada cute aur nakhre-wali Birthday Queen kaun hai? Aap hi ho na? 👑
+        </h2>
+
+        <p id="noTrapFunnySub" class="text-pink-600 text-xs sm:text-sm mb-5 font-semibold min-h-[20px]">
+          Soch samajh ke dabana... "No" wala button aaj aapke control mein nahi aayega! 👀✨
+        </p>
+
+        <!-- Yes & Runaway No Buttons Area -->
+        <div class="relative flex flex-wrap items-center justify-center gap-3 sm:gap-4 min-h-[76px] py-2">
+          <button
+            id="multiYesBtn"
+            onclick="handleMultiNoTrapYes()"
+            class="btn-romantic px-6 py-3.5 rounded-full font-bold text-sm sm:text-base tracking-wide flex items-center gap-1.5 z-10"
+          >
+            <span id="multiYesBtnText">Haan bilkul main hi hoon! 😎💖</span>
+          </button>
+
+          <button
+            id="multiNoBtn"
+            class="btn-runaway px-5 py-3 rounded-full font-semibold text-xs sm:text-sm tracking-wide whitespace-nowrap z-40"
+          >
+            Nahi, main toh innocent hoon 🙈
+          </button>
+        </div>
+
+        <!-- Live Nakhre Counter -->
+        <div class="mt-4 flex items-center justify-center gap-2">
+          <span id="nakhreCounterBadge" class="px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-extrabold text-rose-600">
+            😂 Total 'No' Attempts (Nakhre Count): <span id="nakhreCountVal">0</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 3: OUR BEST DAYS & PHOTO MEMORY WALL (VOTE + QUESTIONS FOR HER)
+           ========================================================================= -->
+      <section id="stage-photos" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-pink-100 text-pink-600 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          📸 Hamare Best Din & Yaadein
+        </div>
+
+        <h2 id="photoSectionHeading" class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+          Kaunsi Photo & Kaunsa Din Sabse Achha Laga? 💖
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mb-4">
+          Inme se apni <span class="text-rose-600 font-bold">#1 Favorite Photo</span> pe ❤️ tap karke vote karo aur niche batao tumhara sabse best time kaunsa raha!
+        </p>
+
+        <!-- Polaroid Photo Grid -->
+        <div id="polaroidGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 text-left">
+          <!-- Populated dynamically from appConfig.photos -->
+        </div>
+
+        <!-- Two Interactive Questions about Photos & Best Time Together -->
+        <div class="bg-gradient-to-br from-rose-50/90 to-pink-50/90 border-2 border-pink-200 rounded-2xl p-4 text-left space-y-3.5 mb-5 shadow-sm">
+          <div>
+            <label for="herPhotoWhyInput" class="block text-xs sm:text-sm font-extrabold text-rose-700 mb-1">
+              📸 1. Tumko inme se kaunsa photo sabse achha laga aur uski sabse pyari baat kya hai?
+            </label>
+            <textarea
+              id="herPhotoWhyInput"
+              rows="2"
+              placeholder="Yahan likho... (Yeh jawab seedha mere paas save hoga ❤️)"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-pink-200 bg-white text-slate-800 text-xs sm:text-sm font-medium focus:outline-none focus:border-rose-400"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="herBestTimeInput" class="block text-xs sm:text-sm font-extrabold text-purple-800 mb-1">
+              ⏳ 2. Jitne bhi achhe din humne saath share kiye hain, unme se tumhara sabse BEST TIME / favorite din kaunsa laga?
+            </label>
+            <textarea
+              id="herBestTimeInput"
+              rows="2"
+              placeholder="Wo din ya pal jab tumhe sabse zyada khushi hui..."
+              class="w-full px-3.5 py-2.5 rounded-xl border border-purple-200 bg-white text-slate-800 text-xs sm:text-sm font-medium focus:outline-none focus:border-purple-400"
+            ></textarea>
+          </div>
+        </div>
+
+        <button onclick="savePhotoMemoryAnswersAndNext()" class="btn-romantic w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2">
+          <span>Save My Favorite Memory 💖</span>
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 4: "TUMHARE BAARE MEIN KUCH KHAAS" + 1000% LOVE SLIDER
+           ========================================================================= -->
+      <section id="stage-about-her" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          ✨ Special Report On You
+        </div>
+
+        <h2 id="aboutHerHeading" class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+          Tumhare Baare Mein Kuch Khaas 😍
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mb-4">
+          Har card pe tap karke dekho maine tumhare baare mein kya-kya notice kiya hai 👇
+        </p>
+
+        <!-- 4 Editable Trait Cards -->
+        <div id="aboutHerGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-4"></div>
+
+        <!-- Editable Sticky Notes / Inside Jokes -->
+        <div class="bg-amber-50/90 border-2 border-amber-200/80 rounded-2xl p-4 text-left mb-4 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs sm:text-sm font-extrabold text-amber-900 flex items-center gap-1.5">
+              <span>📌</span>
+              <span>Hamari Khaas Baatein & Inside Jokes:</span>
+            </h3>
+            <span class="text-[10px] font-bold bg-amber-200/70 text-amber-900 px-2 py-0.5 rounded-full">Dil Se ❤️</span>
+          </div>
+          <div id="insideJokesList" class="space-y-2 text-xs sm:text-sm text-amber-950 font-medium"></div>
+        </div>
+
+        <!-- 1000% Interactive Love & Khushi Meter Slider -->
+        <div class="bg-rose-50/90 border-2 border-rose-200 rounded-2xl p-4 text-left mb-5">
+          <div class="flex items-center justify-between mb-1">
+            <label for="loveMeterSlider" class="text-xs sm:text-sm font-extrabold text-rose-700">
+              💓 Sach batao, mujhse kitna pyar karti ho? (Slide karo):
+            </label>
+            <span id="loveMeterValueBadge" class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white text-xs font-extrabold">1000% 💖</span>
+          </div>
+          <input
+            type="range"
+            id="loveMeterSlider"
+            min="10"
+            max="1000"
+            value="1000"
+            oninput="handleLoveSliderChange(this.value)"
+            class="w-full h-2.5 bg-pink-200 rounded-lg cursor-pointer my-2"
+          />
+          <p id="loveSliderFeedback" class="text-[11px] font-bold text-rose-600">
+            ✨ 100% se kam karne ki koshish bhi mat karna, slider wapas 1000% pe bhaag jayega! 😂
+          </p>
+        </div>
+
+        <button onclick="saveAboutStageAndNext()" class="btn-romantic w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2">
+          <span>Aage Chalo (Fun Quiz Time!) 🎮</span>
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 5: COUPLE FUN QUIZ & POLL ("KITNA JAANTI HO HUMKO?")
+           ========================================================================= -->
+      <section id="stage-quiz" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          🎮 Fun Couple Poll & Game
+        </div>
+
+        <h2 class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+          Chalo Dekhein Tum Kya Sochti Ho! 🧐💖
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mb-4">
+          In 3 pyare sawaalon ka jawab chuno (Tumhara har jawab mere paas live aayega 😍):
+        </p>
+
+        <div id="coupleQuizContainer" class="space-y-4 text-left mb-5">
+          <!-- Populated dynamically from appConfig.quizQuestions -->
+        </div>
+
+        <button onclick="saveQuizAnswersAndNext()" class="btn-romantic w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2">
+          <span>Lock My Answers & Plan Future 💭</span>
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 6: "AAGE KA PLAN KYA HAI?" & CRAVINGS (100% CUSTOMIZABLE OPTIONS)
+           ========================================================================= -->
+      <section id="stage-future" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          💭 Aage Ka Plan & Tumhari Khwahish
+        </div>
+
+        <h2 id="futureStageHeading" class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+          Aage Ka Plan Kya Hai Madam Ji? ✨
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mb-4">
+          Niche se apni pasand ke plans aur khane ki cheezein select karo, aur khud likh ke bhi batao ki aage hum kya-kya karein!
+        </p>
+
+        <div class="text-left space-y-4 mb-5">
+          <!-- Customizable Plan / Wish Chips -->
+          <div>
+            <label class="block text-xs font-extrabold text-slate-700 mb-2">
+              🌟 1. Hum Aage Saath Mein Kya-Kya Karein? (Jo pasand ho tap karo):
+            </label>
+            <div id="futurePlanChipsGrid" class="grid grid-cols-2 gap-2.5">
+              <!-- Populated dynamically from appConfig.futureChips -->
+            </div>
+          </div>
+
+          <!-- Customizable Food / Treat Cravings Chips -->
+          <div>
+            <label class="block text-xs font-extrabold text-slate-700 mb-2">
+              🍕 2. Birthday Treat Mein Kya Khana Hai? (Bill mera! 💸):
+            </label>
+            <div id="cravingChipsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <!-- Populated dynamically from appConfig.cravingChips -->
+            </div>
+          </div>
+
+          <!-- Her Open Text Box for "Aage Ka Plan" -->
+          <div class="bg-pink-50/80 border-2 border-pink-200 rounded-2xl p-3.5">
+            <label for="herFuturePlanTextInput" class="block text-xs sm:text-sm font-extrabold text-rose-700 mb-1">
+              ✍️ 3. Tumhare dil mein aage ke liye kya plan hai? Ya koi khaas wish jo tum chahti ho main poori karun:
+            </label>
+            <textarea
+              id="herFuturePlanTextInput"
+              rows="3"
+              placeholder="Khul ke likho... aage kahan jaana hai, kya karna hai, ya mujhse kya chahiye 💖"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-pink-200 bg-white text-slate-800 text-xs sm:text-sm font-medium focus:outline-none focus:border-rose-400"
+            ></textarea>
+          </div>
+        </div>
+
+        <button onclick="saveFuturePlansAndNext()" class="btn-romantic w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2">
+          <span>Chalo Ab Birthday Cake Kaatein! 🎂</span>
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 7: INTERACTIVE CAKE + GOLD FOIL SCRATCH CARD SURPRISE
+           ========================================================================= -->
+      <section id="stage-cake" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          🕯️ Birthday Cake & Secret Scratch Gift
+        </div>
+
+        <h2 class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+          Aankhein Band Karo & Candles Bujhao! 🎂
+        </h2>
+        <p id="cakeInstructionText" class="text-slate-500 text-xs sm:text-sm mb-3">
+          Har candle pe tap karo ya niche button daba ke saari candles ek saath bujhao! 🌬️✨
+        </p>
+
+        <!-- Interactive 5-Candle SVG Birthday Cake -->
+        <div class="relative mx-auto w-full max-w-[270px] h-[200px] flex items-center justify-center my-1 select-none">
+          <svg viewBox="0 0 260 220" class="w-full h-full drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="130" cy="198" rx="112" ry="14" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="3"/>
+            <ellipse cx="130" cy="195" rx="95" ry="9" fill="#E2E8F0"/>
+            <rect x="45" y="132" width="170" height="62" rx="14" fill="#FDA4AF" stroke="#F43F5E" stroke-width="2.5"/>
+            <path d="M45 144C55 156 68 156 76 144C86 158 99 158 108 144C118 158 132 158 142 144C152 158 166 158 176 144C188 156 202 156 215 144V138C215 134 211 132 205 132H55C49 132 45 134 45 138V144Z" fill="#FFF1F2"/>
+            <circle cx="75" cy="172" r="4" fill="#F43F5E"/>
+            <circle cx="105" cy="168" r="3.5" fill="#FACC15"/>
+            <circle cx="130" cy="175" r="4.5" fill="#EC4899"/>
+            <circle cx="158" cy="168" r="3.5" fill="#A855F7"/>
+            <circle cx="185" cy="172" r="4" fill="#F43F5E"/>
+            <rect x="68" y="82" width="124" height="52" rx="12" fill="#FBCFE8" stroke="#EC4899" stroke-width="2.5"/>
+            <path d="M68 94C77 104 88 104 96 94C105 106 117 106 126 94C135 106 148 106 158 94C168 104 180 104 192 94V88C192 84 188 82 182 82H78C72 82 68 84 68 88V94Z" fill="#FFFFFF"/>
+            <circle cx="80" cy="80" r="6" fill="#E11D48"/>
+            <circle cx="130" cy="80" r="6.5" fill="#E11D48"/>
+            <circle cx="180" cy="80" r="6" fill="#E11D48"/>
+
+            <!-- 5 Candles -->
+            <g onclick="blowSingleCandle(0)" class="cursor-pointer">
+              <rect x="84" y="46" width="8" height="36" rx="3" fill="#FFF" stroke="#F43F5E" stroke-width="1.5"/>
+              <line x1="88" y1="41" x2="88" y2="46" stroke="#334155" stroke-width="1.5"/>
+              <g id="flame-0" class="candle-flame">
+                <path d="M88 22C88 22 81 31 81 36C81 40 84 43 88 43C92 43 95 40 95 36C95 31 88 22 88 22Z" fill="#FB923C"/>
+                <path d="M88 27C88 27 84 33 84 36.5C84 39 85.8 41 88 41C90.2 41 92 39 92 36.5C92 33 88 27 88 27Z" fill="#FEF08A"/>
+              </g>
+              <circle id="smoke-0" cx="88" cy="34" r="5" fill="#94A3B8" class="hidden"/>
+            </g>
+            <g onclick="blowSingleCandle(1)" class="cursor-pointer">
+              <rect x="105" y="42" width="8" height="40" rx="3" fill="#FFF" stroke="#A855F7" stroke-width="1.5"/>
+              <line x1="109" y1="37" x2="109" y2="42" stroke="#334155" stroke-width="1.5"/>
+              <g id="flame-1" class="candle-flame">
+                <path d="M109 18C109 18 102 27 102 32C102 36 105 39 109 39C113 39 116 36 116 32C116 27 109 18 109 18Z" fill="#FB923C"/>
+                <path d="M109 23C109 23 105 29 105 32.5C105 35 106.8 37 109 37C111.2 37 113 35 113 32.5C113 29 109 23 109 23Z" fill="#FEF08A"/>
+              </g>
+              <circle id="smoke-1" cx="109" cy="30" r="5" fill="#94A3B8" class="hidden"/>
+            </g>
+            <g onclick="blowSingleCandle(2)" class="cursor-pointer">
+              <rect x="126" y="38" width="8" height="44" rx="3" fill="#FFF" stroke="#EC4899" stroke-width="1.5"/>
+              <line x1="130" y1="33" x2="130" y2="38" stroke="#334155" stroke-width="1.5"/>
+              <g id="flame-2" class="candle-flame">
+                <path d="M130 14C130 14 123 23 123 28C123 32 126 35 130 35C134 35 137 32 137 28C137 23 130 14 130 14Z" fill="#FB923C"/>
+                <path d="M130 19C130 19 126 25 126 28.5C126 31 127.8 33 130 33C132.2 33 134 31 134 28.5C134 25 130 19 130 19Z" fill="#FEF08A"/>
+              </g>
+              <circle id="smoke-2" cx="130" cy="26" r="5" fill="#94A3B8" class="hidden"/>
+            </g>
+            <g onclick="blowSingleCandle(3)" class="cursor-pointer">
+              <rect x="147" y="42" width="8" height="40" rx="3" fill="#FFF" stroke="#A855F7" stroke-width="1.5"/>
+              <line x1="151" y1="37" x2="151" y2="42" stroke="#334155" stroke-width="1.5"/>
+              <g id="flame-3" class="candle-flame">
+                <path d="M151 18C151 18 144 27 144 32C144 36 147 39 151 39C155 39 158 36 158 32C158 27 151 18 151 18Z" fill="#FB923C"/>
+                <path d="M151 23C151 23 147 29 147 32.5C147 35 148.8 37 151 37C153.2 37 155 35 155 32.5C155 29 151 23 151 23Z" fill="#FEF08A"/>
+              </g>
+              <circle id="smoke-3" cx="151" cy="30" r="5" fill="#94A3B8" class="hidden"/>
+            </g>
+            <g onclick="blowSingleCandle(4)" class="cursor-pointer">
+              <rect x="168" y="46" width="8" height="36" rx="3" fill="#FFF" stroke="#F43F5E" stroke-width="1.5"/>
+              <line x1="172" y1="41" x2="172" y2="46" stroke="#334155" stroke-width="1.5"/>
+              <g id="flame-4" class="candle-flame">
+                <path d="M172 22C172 22 165 31 165 36C165 40 168 43 172 43C176 43 179 40 179 36C179 31 172 22 172 22Z" fill="#FB923C"/>
+                <path d="M172 27C172 27 168 33 168 36.5C168 39 169.8 41 172 41C174.2 41 176 39 176 36.5C176 33 172 27 172 27Z" fill="#FEF08A"/>
+              </g>
+              <circle id="smoke-4" cx="172" cy="34" r="5" fill="#94A3B8" class="hidden"/>
+            </g>
+          </svg>
+        </div>
+
+        <button id="blowAllBtn" onclick="blowAllCandles()" class="btn-romantic px-6 py-3 rounded-full font-bold text-xs sm:text-sm inline-flex items-center gap-2 mb-5">
+          <span>🌬️ Blow All Candles Together!</span>
+        </button>
+
+        <!-- Interactive Gold Foil Scratch Card Surprise -->
+        <div class="bg-gradient-to-br from-amber-50 via-rose-50 to-pink-50 border-2 border-amber-300 rounded-2xl p-4 mb-5 text-center shadow-sm">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-amber-800 mb-1">
+            🪙 Secret Gold Scratch Card For You
+          </div>
+          <p class="text-[11px] text-slate-500 mb-2.5">
+            Apni ungli (ya mouse) se niche Gold Box ko scratch karke apna secret gift dekho! 👇
+          </p>
+
+          <div class="relative mx-auto w-full max-w-[320px] h-[110px] rounded-xl overflow-hidden border-2 border-amber-400 shadow-inner bg-white flex items-center justify-center p-3">
+            <div id="scratchHiddenText" class="text-rose-600 font-extrabold text-sm sm:text-base leading-snug select-none">
+              🎁 Surprise Gift + Unlimited Pampering & Jo Tum Bolo Wo Hukam Maana Jayega! 👑💖
+            </div>
+            <canvas id="scratchCanvas" class="absolute inset-0 w-full h-full cursor-pointer touch-none"></canvas>
+          </div>
+        </div>
+
+        <button onclick="goToNextEnabledStage()" class="btn-romantic w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2">
+          <span>Open Secret Letter & Send Reply 💌</span>
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- =========================================================================
+           STAGE 8: WAX-SEALED LOVE LETTER + SEND HER MESSAGE TO FIREBASE
+           ========================================================================= -->
+      <section id="stage-letter" class="stage-section">
+        <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+          💌 Dil Ki Baat & Return Message
+        </div>
+
+        <h2 class="serif-heading text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+          Ek Chhota Sa Khaas Khat... 🥺❤️
+        </h2>
+
+        <!-- Closed Wax-Sealed Envelope -->
+        <div id="closedEnvelopeView" class="envelope-box p-6 sm:p-7 my-3 text-center">
+          <div class="text-xs font-bold uppercase tracking-widest text-rose-500 mb-1">Private & Confidential</div>
+          <p class="serif-heading text-lg sm:text-xl font-bold text-slate-800 mb-4">
+            To: <span class="her-name-slot text-rose-600">Suu</span> (<span class="her-codename-slot text-purple-600">Madam Ji 👑</span>)
+          </p>
+          <button
+            onclick="openSecretEnvelope()"
+            class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-rose-600 to-pink-700 text-white shadow-xl border-4 border-rose-200 flex flex-col items-center justify-center hover:scale-110 active:scale-95 transition transform cursor-pointer"
+          >
+            <span class="text-2xl">💌</span>
+            <span class="text-[9px] font-extrabold uppercase tracking-wider mt-0.5">Tap Seal</span>
+          </button>
+          <p class="text-xs font-semibold text-rose-700 mt-3">
+            Wax seal pe tap karke apna birthday letter kholo ✨
+          </p>
+        </div>
+
+        <!-- Opened Letter Paper -->
+        <div id="openedLetterView" class="hidden letter-paper p-5 sm:p-6 my-3 text-left">
+          <div class="flex items-center justify-between border-b border-pink-200 pb-2.5 mb-3">
+            <div>
+              <span class="text-[11px] font-bold text-rose-500 uppercase tracking-wider">My Birthday Letter To You</span>
+              <h3 class="serif-heading text-lg sm:text-xl font-bold text-slate-900">
+                Dearest <span class="her-name-slot text-rose-600">Suu</span> (<span class="her-codename-slot text-purple-600">Madam Ji 👑</span>),
+              </h3>
+            </div>
+            <span class="text-2xl">🌹✨</span>
+          </div>
+
+          <div id="loveLetterBody" class="text-slate-700 text-xs sm:text-sm leading-relaxed whitespace-pre-line font-medium mb-4"></div>
+
+          <div class="flex items-center justify-between pt-3 border-t border-dashed border-pink-200">
+            <span class="text-xs text-slate-400 italic">"Tumhari khushi ke liye poori website bana di 😎💻"</span>
+            <div class="text-right">
+              <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Forever Yours,</span>
+              <span class="handwritten text-xl sm:text-2xl font-bold text-rose-600 his-name-slot">Arijit ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Return Message Box From Her To Him (Saved to Firebase!) -->
+        <div class="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 border-2 border-rose-300 rounded-2xl p-4 text-left my-4 shadow-sm">
+          <label for="herFinalMessageToHim" class="block text-xs sm:text-sm font-extrabold text-rose-700 mb-1">
+            💌 Ab Tumhari Baari: Mere liye apna Birthday Reply / Dil Ki Baat yahan likho:
+          </label>
+          <p class="text-[11px] text-slate-500 mb-2">
+            Jo bhi tum yahan likhogi aur upar jo bhi select kiya hai, woh sab seedha mere paas live pahunch jayega! 🥰
+          </p>
+          <textarea
+            id="herFinalMessageToHim"
+            rows="3"
+            placeholder="Mere liye kuch pyara sa likho... ❤️"
+            class="w-full px-3.5 py-2.5 rounded-xl border border-pink-200 bg-white text-slate-800 text-xs sm:text-sm font-medium focus:outline-none focus:border-rose-500 mb-3"
+          ></textarea>
+
+          <button
+            id="submitToCloudBtn"
+            onclick="submitAllHerAnswersToCloud()"
+            class="btn-romantic w-full py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2"
+          >
+            <span>🚀 Send My Answers & Open VIP Queen Pass 👑</span>
+          </button>
+        </div>
+
+        <!-- Final VIP Pass Summary (Revealed after submitting) -->
+        <div id="finalVipPassBox" class="hidden vip-pass p-4 sm:p-5 text-left shadow-md mt-4">
+          <div class="flex items-center justify-between border-b border-pink-200 pb-2.5 mb-3">
+            <div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 to-purple-500 px-2.5 py-0.5 rounded-full">
+                ★ Cloud Synced To <span class="his-name-slot">Arijit</span> ★
+              </span>
+              <h3 class="serif-heading font-bold text-base sm:text-lg text-slate-900 mt-1">
+                👑 Official Birthday Queen Pass
+              </h3>
+            </div>
+            <span class="text-3xl">🎉</span>
+          </div>
+
+          <div id="finalPassSummaryList" class="space-y-1.5 text-xs sm:text-sm text-slate-700 mb-4"></div>
+
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button onclick="copyWhatsAppSummary()" class="flex-1 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow transition">
+              <span>📲 Copy & Send on WhatsApp Too</span>
+            </button>
+            <button onclick="restartExperience()" class="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition">
+              🔄 Replay
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       PHOTO ZOOM LIGHTBOX MODAL
+       ========================================================================= -->
+  <div id="photoLightbox" onclick="closePhotoLightbox()" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div onclick="event.stopPropagation()" class="bg-white p-3 sm:p-4 rounded-3xl max-w-md w-full shadow-2xl text-center">
+      <img id="lightboxImg" src="" alt="Memory" class="w-full max-h-[65vh] object-contain rounded-2xl mb-3 bg-rose-50" />
+      <p id="lightboxCaption" class="font-bold text-slate-800 text-sm sm:text-base mb-3"></p>
+      <button onclick="closePhotoLightbox()" class="px-6 py-2 rounded-full bg-rose-500 text-white font-bold text-xs">Close ✕</button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       BOYFRIEND STUDIO & LIVE FIREBASE DASHBOARD MODAL (3 TABS)
+       ========================================================================= -->
+  <div id="studioModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-2 sm:p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-pink-200 overflow-hidden">
+
+      <!-- Modal Top Header -->
+      <div class="px-4 sm:px-6 py-3.5 bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white flex items-center justify-between shrink-0">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider bg-white/20 px-2.5 py-0.5 rounded-full">
+              Boyfriend Master Studio 🛠️
+            </span>
+            <span id="cloudStatusBadge" class="text-[10px] font-extrabold bg-emerald-400 text-slate-950 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+              <span>☁️ Firebase Connected</span>
+            </span>
+          </div>
+          <h3 class="serif-heading text-base sm:text-xl font-bold mt-0.5">
+            Customize Pages, Questions, Photos & View Her Live Answers
+          </h3>
+        </div>
+        <button onclick="closeStudioModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center font-bold">✕</button>
+      </div>
+
+      <!-- Studio Navigation Tabs -->
+      <div class="flex border-b border-pink-100 bg-rose-50/60 px-3 pt-2 gap-1.5 shrink-0 overflow-x-auto">
+        <button id="tabBtn-pages" onclick="switchStudioTab('pages')" class="px-3.5 py-2 rounded-t-xl font-extrabold text-xs sm:text-sm bg-white text-rose-600 border-t border-x border-pink-200">
+          📄 1. Pages Hide / Skip / Order
+        </button>
+        <button id="tabBtn-customize" onclick="switchStudioTab('customize')" class="px-3.5 py-2 rounded-t-xl font-bold text-xs sm:text-sm text-slate-600 hover:bg-white/60">
+          ✍️ 2. Edit Questions, Photos & Text
+        </button>
+        <button id="tabBtn-responses" onclick="switchStudioTab('responses')" class="px-3.5 py-2 rounded-t-xl font-bold text-xs sm:text-sm text-slate-600 hover:bg-white/60 flex items-center gap-1.5">
+          <span>📊 3. Her Live Answers (Cloud)</span>
+          <span id="responseCountPill" class="px-1.5 py-0.2 bg-rose-500 text-white rounded-full text-[10px]">0</span>
+        </button>
+      </div>
+
+      <!-- Scrollable Tab Body -->
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 text-left space-y-5 text-slate-800">
+
+        <!-- =================================================
+             TAB 1: PAGE MANAGER (HIDE / DELETE / SKIP / REORDER)
+             ================================================= -->
+        <div id="studioTab-pages" class="space-y-4">
+          <div class="bg-rose-50 border border-rose-200 rounded-2xl p-3.5 text-xs sm:text-sm text-rose-900">
+            💡 <b>Full Page Control:</b> Jis page ko aap apni GF ko <b>nahi dikhana chahte</b>, uska switch <b>OFF (Hide/Delete)</b> kar dein. Kisi bhi page ko abhi check karne ke liye <b>"Jump / Preview 👁️"</b> dabayein!
+          </div>
+
+          <div id="pageManagerList" class="space-y-2.5">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Firebase Cloud Database Link Box -->
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2">
+            <div class="flex items-center justify-between">
+              <label class="text-xs font-extrabold text-slate-700 uppercase tracking-wider">
+                ☁️ Your Connected Firebase Realtime Database URL:
+              </label>
+              <button onclick="testAndSyncFirebase()" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700">
+                🔄 Test & Sync Cloud
+              </button>
+            </div>
+            <input
+              type="text"
+              id="cfgFirebaseUrl"
+              value="https://birthday-wish-for-suu-default-rtdb.firebaseio.com/"
+              class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-mono text-slate-700"
+            />
+            <p class="text-[11px] text-slate-500">
+              ✅ Aapka `birthday-wish-for-suu-default-rtdb` link pehle se juda hua hai. Jab aap <b>"Save Everything to Firebase Cloud"</b> dabayenge, aapke saare badlaav aur photos cloud pe save ho jayenge!
+            </p>
+          </div>
+        </div>
+
+        <!-- =================================================
+             TAB 2: DEEP CONTENT, PHOTOS, RUNAWAY 'NO' & OPTIONS EDITOR
+             ================================================= -->
+        <div id="studioTab-customize" class="hidden space-y-6">
+
+          <!-- A. Names & Secret Code Name -->
+          <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-4 space-y-3">
+            <h4 class="font-extrabold text-xs sm:text-sm text-rose-700 uppercase tracking-wider">
+              👑 A. Uska Naam, Secret Code Name & Aapka Naam
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">GF's Name</label>
+                <input type="text" id="cfgHerName" class="w-full px-3 py-2 rounded-xl border border-pink-200 bg-white text-sm font-bold" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Secret Code Name</label>
+                <input type="text" id="cfgHerCodeName" class="w-full px-3 py-2 rounded-xl border border-purple-200 bg-white text-sm font-extrabold text-purple-700" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Your Name</label>
+                <input type="text" id="cfgHisName" class="w-full px-3 py-2 rounded-xl border border-pink-200 bg-white text-sm font-bold" />
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-bold text-slate-500 mr-1 self-center">Quick Code Names:</span>
+              <button type="button" onclick="setQuickCodeName('Madam Ji 👑')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Madam Ji 👑</button>
+              <button type="button" onclick="setQuickCodeName('Suu 💖')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Suu 💖</button>
+              <button type="button" onclick="setQuickCodeName('Meri Jaan ✨')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Meri Jaan ✨</button>
+              <button type="button" onclick="setQuickCodeName('Drama Queen 🎭')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Drama Queen 🎭</button>
+              <button type="button" onclick="setQuickCodeName('Chashmish 🤓💖')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Chashmish 🤓💖</button>
+              <button type="button" onclick="setQuickCodeName('Sunshine 🌻')" class="px-2.5 py-1 rounded-full bg-white border border-pink-200 text-xs font-bold">Sunshine 🌻</button>
+            </div>
+          </div>
+
+          <!-- B. Multi-Round Runaway 'No' Questions Editor -->
+          <div class="bg-purple-50/70 border border-purple-200 rounded-2xl p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="font-extrabold text-xs sm:text-sm text-purple-800 uppercase tracking-wider">
+                  🏃‍♀️ B. Runaway 'No' Button Questions (Multiple Rounds!)
+                </h4>
+                <p class="text-[11px] text-slate-500">
+                  Har sawaal par 'No' button alag tarike se bhaagega! Aap kisi bhi sawaal ko badal sakte hain, hata sakte hain ya naya sawaal jod sakte hain.
+                </p>
+              </div>
+              <button type="button" onclick="addNewNoTrapQuestion()" class="px-3 py-1.5 rounded-xl bg-purple-600 text-white text-xs font-bold hover:bg-purple-700 shrink-0">
+                + Add 'No' Question
+              </button>
+            </div>
+            <div id="noTrapEditorList" class="space-y-3"></div>
+          </div>
+
+          <!-- C. Photo Gallery Manager (Upload From Phone or Paste URL) -->
+          <div class="bg-pink-50/70 border border-pink-200 rounded-2xl p-4 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h4 class="font-extrabold text-xs sm:text-sm text-pink-800 uppercase tracking-wider">
+                  📸 C. Hamari Photos & Yaadein (Upload From Phone Gallery)
+                </h4>
+                <p class="text-[11px] text-slate-500">
+                  Apne phone se apni aur unki best photos upload karein. Woh bataengi unhe kaunsi photo sabse achhi lagi!
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <label class="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold cursor-pointer inline-flex items-center gap-1">
+                  <span>📤 Upload Photo From Phone</span>
+                  <input type="file" accept="image/*" multiple onchange="handleGalleryPhotoUpload(event)" class="hidden" />
+                </label>
+                <button type="button" onclick="addEmptyPhotoSlot()" class="px-3 py-1.5 rounded-xl bg-white border border-pink-300 text-pink-700 text-xs font-bold">
+                  + Add Link Slot
+                </button>
+              </div>
+            </div>
+            <div id="photoEditorList" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+          </div>
+
+          <!-- D. Replace Any Option Chips (Future Plans & Food Cravings - Delete What You Don't Like!) -->
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 space-y-4">
+            <h4 class="font-extrabold text-xs sm:text-sm text-emerald-900 uppercase tracking-wider">
+              💭 D. "Aage Ka Plan" & Food Options (Jo Pasand Na Ho `[✕]` Daba Ke Hata Dein!)
+            </h4>
+            <p class="text-[11px] text-slate-600">
+              Agar aapko koi option (jaise trip/gaadi ya koi bhi baat) nahi rakhni, toh bas uske aage <b>✕</b> dabayein ya apni marzi ka naya option jod dein!
+            </p>
+
+            <!-- Future Plan Chips Editor -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">1. Aage Ke Plan Ke Options:</label>
+              <div id="editorFutureChips" class="flex flex-wrap gap-2 mb-2"></div>
+              <div class="flex gap-2">
+                <input type="text" id="newFutureChipInput" placeholder="Apni marzi ka option likhein (e.g. Saath Mein Mandir Darshan 🛕)" class="flex-1 px-3 py-1.5 rounded-xl border border-emerald-300 bg-white text-xs font-semibold" />
+                <button type="button" onclick="addCustomFutureChip()" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold">+ Add</button>
+              </div>
+            </div>
+
+            <!-- Food Cravings Chips Editor -->
+            <div class="pt-2 border-t border-emerald-200">
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">2. Khane / Treat Ke Options:</label>
+              <div id="editorCravingChips" class="flex flex-wrap gap-2 mb-2"></div>
+              <div class="flex gap-2">
+                <input type="text" id="newCravingChipInput" placeholder="Naya food item (e.g. Rasgulla & Ice Cream 🍨)" class="flex-1 px-3 py-1.5 rounded-xl border border-emerald-300 bg-white text-xs font-semibold" />
+                <button type="button" onclick="addCustomCravingChip()" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- E. "Uske Baare Mein" (4 Cards + Inside Jokes) -->
+          <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 space-y-3">
+            <h4 class="font-extrabold text-xs sm:text-sm text-amber-900 uppercase tracking-wider">
+              ✨ E. "Uske Baare Mein" (4 Cards & Khaas Baatein)
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Card 1 (Smile & Cuteness)</label>
+                <input type="text" id="cfgTrait0" class="w-full px-3 py-2 rounded-xl border border-amber-200 bg-white text-xs font-semibold" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Card 2 (Gussa & Nakhre)</label>
+                <input type="text" id="cfgTrait1" class="w-full px-3 py-2 rounded-xl border border-amber-200 bg-white text-xs font-semibold" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Card 3 (Pyari Aadat)</label>
+                <input type="text" id="cfgTrait2" class="w-full px-3 py-2 rounded-xl border border-amber-200 bg-white text-xs font-semibold" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Card 4 (Why She Is Special)</label>
+                <input type="text" id="cfgTrait3" class="w-full px-3 py-2 rounded-xl border border-amber-200 bg-white text-xs font-semibold" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-600 mb-1">📌 Khaas Baatein / Inside Jokes (Har line ek naye card mein dikhegi):</label>
+              <textarea id="cfgInsideJokes" rows="3" class="w-full px-3 py-2 rounded-xl border border-amber-200 bg-white text-xs font-semibold"></textarea>
+            </div>
+          </div>
+
+          <!-- F. Scratch Card Gift & Secret Love Letter -->
+          <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-4 space-y-3">
+            <h4 class="font-extrabold text-xs sm:text-sm text-rose-800 uppercase tracking-wider">
+              💌 F. Gold Scratch Card Gift & Secret Birthday Letter
+            </h4>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1">🪙 Scratch Card Ke Neeche Kya Gift/Promise Dikhana Hai?</label>
+              <input type="text" id="cfgScratchText" class="w-full px-3 py-2 rounded-xl border border-rose-200 bg-white text-xs sm:text-sm font-bold text-rose-600" />
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                <label class="text-xs font-bold text-slate-600">💌 Secret Envelope Letter ("Dil Ki Baat"):</label>
+                <div class="flex gap-1">
+                  <button type="button" onclick="applyLetterTemplate(0)" class="px-2 py-0.5 rounded bg-white border border-rose-200 text-[10px] font-bold">😂 Cute+Funny</button>
+                  <button type="button" onclick="applyLetterTemplate(1)" class="px-2 py-0.5 rounded bg-white border border-rose-200 text-[10px] font-bold">💖 Deep Romantic</button>
+                  <button type="button" onclick="applyLetterTemplate(2)" class="px-2 py-0.5 rounded bg-white border border-rose-200 text-[10px] font-bold">✨ Bestie+GF</button>
+                </div>
+              </div>
+              <textarea id="cfgLetter" rows="5" class="w-full px-3.5 py-2.5 rounded-xl border border-rose-200 bg-white text-xs sm:text-sm font-medium leading-relaxed"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================
+             TAB 3: GIRLFRIEND'S LIVE RESPONSES DASHBOARD (FIREBASE)
+             ================================================= -->
+        <div id="studioTab-responses" class="hidden space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-3.5">
+            <div>
+              <h4 class="font-extrabold text-sm text-emerald-900 flex items-center gap-1.5">
+                <span>📡 Live Cloud Responses From Her</span>
+              </h4>
+              <p class="text-xs text-emerald-700">
+                Jaise hi woh apna link kholengi, photo chunengi ya jawab likhengi, woh sab yahan dikhega!
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="fetchHerResponsesFromFirebase()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm">
+                🔄 Refresh Live Answers
+              </button>
+              <button onclick="clearFirebaseResponses()" class="px-3 py-2 rounded-xl bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs font-bold">
+                🗑️ Reset
+              </button>
+            </div>
+          </div>
+
+          <div id="liveResponsesContainer" class="space-y-3">
+            <div class="p-8 text-center text-slate-400 text-sm font-semibold">
+              Loading responses from Firebase Cloud... ☁️
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Studio Modal Footer Actions -->
+      <div class="px-4 sm:px-6 py-3.5 bg-slate-50 border-t border-pink-100 flex flex-col sm:flex-row items-center justify-between gap-2.5 shrink-0">
+        <button onclick="saveEverythingToCloud(false)" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs sm:text-sm transition">
+          💾 Save Changes & Sync to Firebase Cloud
+        </button>
+
+        <button onclick="saveEverythingToCloud(true)" class="w-full sm:flex-1 py-2.5 px-5 rounded-xl btn-romantic font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+          <span>🔗 Save to Cloud & Copy Clean Link For Her (Hides Admin Buttons!)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toastBanner" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-5 py-3 rounded-full text-xs sm:text-sm font-bold shadow-2xl z-50 opacity-0 pointer-events-none transition-all duration-300 text-center max-w-[92vw]">
+    Saved! 🎉
+  </div>
+
+  <!-- =========================================================================
+       COMPLETE JAVASCRIPT ENGINE + FIREBASE REALTIME CLOUD SYNC
+       ========================================================================= -->
+  <script>
+    // --- 1. PRE-CONFIGURED FIREBASE REALTIME DATABASE URL ---
+    const DEFAULT_FIREBASE_URL = "https://birthday-wish-for-suu-default-rtdb.firebaseio.com/";
+
+    // --- 2. DEFAULT MASTER CONFIGURATION (100% EDITABLE & TOGGLEABLE) ---
+    const defaultMasterConfig = {
+      firebaseUrl: DEFAULT_FIREBASE_URL,
+      herName: "Suu",
+      herCodeName: "Madam Ji 👑",
+      hisName: "Arijit ❤️",
+
+      // Page Manager: Every stage can be turned ON/OFF or reordered!
+      stages: [
+        { id: "stage-scanner", title: "🔒 1. Secret Code-Name & Heart Scanner", enabled: true },
+        { id: "stage-no-trap", title: "🏃‍♀️ 2. Multi-Question Runaway 'No' Trap (4 Sawaal)", enabled: true },
+        { id: "stage-photos", title: "📸 3. Hamare Photos, Best Din & Memory Vote", enabled: true },
+        { id: "stage-about-her", title: "✨ 4. Tumhare Baare Mein & 1000% Love Slider", enabled: true },
+        { id: "stage-quiz", title: "🎮 5. Fun Couple Quiz & Poll Game", enabled: true },
+        { id: "stage-future", title: "💭 6. Aage Ka Plan & Birthday Treat Options", enabled: true },
+        { id: "stage-cake", title: "🎂 7. Blow Birthday Candles & Gold Scratch Card", enabled: true },
+        { id: "stage-letter", title: "💌 8. Secret Love Letter & Her Reply Box", enabled: true }
+      ],
+
+      // Multi-Round Runaway 'No' Questions (He can edit, delete, or add more!)
+      noTrapQuestions: [
+        {
+          emoji: "👑",
+          question: "Sabse pehle sach batao... iss duniya mein sabse zyada cute aur nakhre-wali Birthday Queen kaun hai? Aap hi ho na? 👑",
+          yesText: "Haan bilkul main hi hoon! 😎💖",
+          noText: "Nahi, main toh innocent hoon 🙈"
+        },
+        {
+          emoji: "⚡",
+          question: "Accha yeh batao, hum dono mein chhoti-chhoti baat pe 5G speed se gussa kaun hota hai aur manana kisko padta hai? Maanti ho na? 😂",
+          yesText: "Haan thode nakhre toh bante hain! 💅❤️",
+          noText: "Bilkul nahi, galti tumhari hoti hai! 😤"
+        },
+        {
+          emoji: "😌",
+          question: "Kya aap maanti hain ki main duniya ka sabse best aur sabse pyara insaan hoon jo aapko itna pyar karta hai? ✨",
+          yesText: "100% Sach! Tum best ho ♥",
+          noText: "Sochna padega / Khushfehmi hai 🤣"
+        },
+        {
+          emoji: "🎂",
+          question: "Toh phir apne Birthday pe mere saath sabse best time spend karne aur apna surprise dekhne ke liye ready ho Madam Ji? 🎉",
+          yesText: "Haan, full ready! Chalo dikhao 💖",
+          noText: "Abhi mood nahi hai 🏃‍♀️"
+        }
+      ],
+
+      // Polaroid Photos (Supports phone gallery upload or URLs)
+      photos: [
+        {
+          url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
+          caption: "Hamara Sabse Pyara Din ✨ (Replace with your photo in Studio!)",
+          dateTag: "Best Memory 💖"
+        },
+        {
+          url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80",
+          caption: "Jab Tumhari Smile Dekh Kar Din Ban Gaya 😍",
+          dateTag: "My Favorite Smile 🌸"
+        },
+        {
+          url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
+          caption: "Saath Bitaya Har Pal Priceless Hai 🥂",
+          dateTag: "Together Forever 👑"
+        },
+        {
+          url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=600&q=80",
+          caption: "Hamari Unplanned Masti & Baatein ❤️",
+          dateTag: "Special Moment ✨"
+        }
+      ],
+
+      // Stage 4: About Her Traits & Inside Jokes
+      traits: [
+        "Ek pyari si smile se mera poora din achha kar dene ki superpower hai tumhare paas! 😍✨",
+        "Bina baat ke 5G speed se munh fulana aur phir 2 minute mein maan jaana! 🍫⚡",
+        "Chhoti-chhoti baaton ki fikar karna aur dil ki duniya mein sabse saaf hona! 🎭💖",
+        "Hazaron mein nahi, karodon mein ek hai meri Madam Ji — my permanent favorite person! 👑🌹"
+      ],
+      insideJokes: [
+        "🍕 Jab bhi pucho 'Kya khana hai?', pehle bolegi 'Kuch bhi' aur phir saare options reject karegi! 😂",
+        "📸 Ek acchi photo aane tak 50 photos khichwana tumhara janamsiddh adhikar hai! 💅",
+        "🥺 Tumhara 'Main gussa hoon' bolke thodi der baad khud hi baat karna duniya ki sabse cute cheez hai ❤️"
+      ],
+
+      // Stage 5: Fun Couple Quiz / Poll
+      quizQuestions: [
+        {
+          q: "1. Agar hum dono mein kabhi ladai ho, toh sabse pehle hasi kisko aati hai? 😂",
+          options: ["Tumko (Kyunki tum reh nahi paati) 🤭", "Mujhko (Tumhara cute gussa dekh ke) 😍", "Dono ek saath has padte hain ❤️"]
+        },
+        {
+          q: "2. Tumhare hisaab se hum dono ka sabse best time kab hota hai? ✨",
+          options: ["Jab hum aaram se baith ke dher saari baatein karte hain 💬", "Jab hum saath mein kuch achha khaate aur ghoomte hain 🍕", "Jab hum bina kuch bole bas saath hote hain 🥺💖"]
+        },
+        {
+          q: "3. Aaj Birthday Queen hone ke naate tumhara sabse pehla hukam kya hai? 👑",
+          options: ["Aaj meri har baat bina behas ke maani jayegi! 💅", "Mujhe dher saara pyar, time aur attention chahiye 🥰", "Surprise gift aur meri pasand ki treat! 🎁"]
+        }
+      ],
+
+      // Stage 6: Clean Customizable Future Plan Chips (No forced pahad/gaadi unless added!)
+      futureChips: [
+        "Saath Mein Sukoon Se Baithna & Lambi Baatein 💬✨",
+        "Special Birthday Dinner / Cafe Date 🕯️🍕",
+        "Dher Saari Cute Photos Khichwana 📸💖",
+        "Shopping & Surprise Gift Session 🛍️🎁",
+        "Shaam Ki Peaceful Walk Haath Pakad Ke 🌙🤝",
+        "Tumhari Pasand Ki Movie & Favorite Food 🍿🍫"
+      ],
+
+      cravingChips: [
+        "Chocolate Cake 🎂",
+        "Spicy Momos 🥟",
+        "Cheese Pizza / Pasta 🍕",
+        "Cold Coffee & Ice Cream 🧋",
+        "Golgappe / Pani Puri 🧆",
+        "Chocolates & Sweet Treat 🍫"
+      ],
+
+      scratchCardText: "🎁 Special Birthday Gift + Aaj Tumhara Har Hukam Sir Aankhon Par! 👑💖",
+
+      letter: `Happy Birthday meri pyari Suu (Madam Ji)! 🎂💖\n\nSach bataun toh jab se tum meri life mein aayi ho, zindagi mein khushiyaan 1000 guna badh gayi hain!\n\nTumhari chhoti-chhoti baaton pe khush hona, thode se cute nakhre dikhana, aur wo sabse pyari si smile... mujhe tumhari har ek aadat se pyar hai. Jitne bhi achhe din humne saath share kiye hain, wo meri life ke sabse best pal hain, aur aage isse bhi hazaar guna achhe din hum saath bitayenge.\n\nAlways stay happy and keep smiling my Queen! ❤️✨`
+    };
+
+    const letterTemplates = [
+      `Happy Birthday meri pyari Suu (Madam Ji)! 🎂💖\n\nSach bataun toh jab se tum meri life mein aayi ho, zindagi mein khushiyaan 1000 guna badh gayi hain!\n\nTumhari chhoti-chhoti baaton pe khush hona, thode se cute nakhre dikhana, aur wo sabse pyari si smile... mujhe tumhari har ek aadat se pyar hai. Jitne bhi achhe din humne saath share kiye hain, wo meri life ke sabse best pal hain, aur aage isse bhi hazaar guna achhe din hum saath bitayenge.\n\nAlways stay happy and keep smiling my Queen! ❤️✨`,
+      `Happy Birthday to the most special girl in my world! 🌹✨\n\nShayad main har roz bol nahi paata, par tum meri zindagi ka sabse khoobsurat hissa ho. Tumhari smile dekh kar meri saari thakan door ho jaati hai aur tumhare saath bitaya har ek pal mere liye priceless hai.\n\nIss birthday pe mera bas ek hi promise hai — chahe kuch bhi ho, main hamesha tumhara haath pakad ke tumhare saath khada rahunga. Keep shining my Queen! 🥺💖`,
+      `Happy Birthday meri Best Friend, Partner aur Sabse Favorite Insaan! 🥳🎂\n\nHumari hasi-mazaak, ghanto tak baatein karna aur saath bitaye saare achhe din — mere dil ke sabse kareeb hain. Tum jaisi samajhdar, cute aur pyari ladki kismat walon ko hi milti hai! 😎✨\n\nChalo aaj saare nakhre maaf, batao aage ka kya plan hai! 💖🍕`
+    ];
+
+    let appConfig = JSON.parse(JSON.stringify(defaultMasterConfig));
+
+    // --- 3. HER LIVE SESSION TRACKING STATE (SAVED TO FIREBASE) ---
+    let sessionStartTime = Date.now();
+    let currentStageIndex = 0; // Index inside enabled stages
+    let currentNoTrapRound = 0;
+    let yesBtnScale = 1;
+    let candlesBlown = [false, false, false, false, false];
+    let soundEnabled = true;
+    let audioCtx = null;
+    let secretCrownTaps = 0;
+
+    let herSessionData = {
+      sessionId: "sess_" + Date.now(),
+      startedAt: new Date().toLocaleString('en-IN'),
+      lastUpdatedAt: new Date().toLocaleString('en-IN'),
+      timeSpentSeconds: 0,
+      totalNakhreCount: 0,
+      nakhreByQuestion: {},
+      favoritePhotoIndex: 0,
+      favoritePhotoCaption: "",
+      photoWhyLiked: "",
+      bestTimeTogether: "",
+      loveSliderPercent: 1000,
+      quizAnswers: {},
+      selectedFuturePlans: [],
+      selectedCravings: [],
+      customFuturePlanText: "",
+      scratchCardRevealed: false,
+      finalLoveMessageToHim: "",
+      completedFullJourney: false
+    };
+
+    const gfRunawayTaunts = [
+      "Arey Madam Ji, pakad ke dikhao! 😜",
+      "Birthday wale din 'No' bolna mana hai! 🎂",
+      "Jhooth mat bolo Cutie! 😂",
+      "No button aaj chhutti pe hai! 🦋",
+      "Kitni koshish karogi? Haan daba do! 💖",
+      "5G speed se bhaagunga main! 🏃‍♀️💨",
+      "Meri mehnat dekho, Haan pe click karo! 💻❤️"
+    ];
+
+    // --- 4. INITIALIZATION ON WINDOW LOAD ---
+    window.onload = async function () {
+      initFloatingElements();
+      resizeConfettiCanvas();
+      window.addEventListener('resize', resizeConfettiCanvas);
+
+      // Check if opened in "Her Mode" (?mode=her) -> Hide Admin & Skip buttons so she sees pure magic
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('mode') === 'her') {
+        document.getElementById('creatorStudioBtn').classList.add('hidden');
+        document.getElementById('quickSkipBtn').classList.add('hidden');
+      }
+
+      // Load local config first, then fetch latest from Firebase Cloud
+      const localSaved = localStorage.getItem('suu_bday_master_cfg');
+      if (localSaved) {
+        try {
+          const parsed = JSON.parse(localSaved);
+          appConfig = mergeWithDefaultConfig(parsed);
+        } catch (e) {}
+      }
+
+      await loadConfigFromFirebaseCloud();
+
+      renderAllAppContent();
+      setupRunawayNoButton();
+      initScratchCardCanvas();
+      goToEnabledStageByIndex(0);
+
+      // Periodically update time spent
+      setInterval(() => {
+        herSessionData.timeSpentSeconds = Math.round((Date.now() - sessionStartTime) / 1000);
+      }, 3000);
+    };
+
+    function mergeWithDefaultConfig(loaded) {
+      return {
+        ...defaultMasterConfig,
+        ...loaded,
+        firebaseUrl: loaded.firebaseUrl || DEFAULT_FIREBASE_URL,
+        stages: Array.isArray(loaded.stages) && loaded.stages.length > 0 ? loaded.stages : defaultMasterConfig.stages,
+        noTrapQuestions: Array.isArray(loaded.noTrapQuestions) && loaded.noTrapQuestions.length > 0 ? loaded.noTrapQuestions : defaultMasterConfig.noTrapQuestions,
+        photos: Array.isArray(loaded.photos) && loaded.photos.length > 0 ? loaded.photos : defaultMasterConfig.photos,
+        traits: Array.isArray(loaded.traits) && loaded.traits.length === 4 ? loaded.traits : defaultMasterConfig.traits,
+        insideJokes: Array.isArray(loaded.insideJokes) && loaded.insideJokes.length > 0 ? loaded.insideJokes : defaultMasterConfig.insideJokes,
+        quizQuestions: Array.isArray(loaded.quizQuestions) && loaded.quizQuestions.length > 0 ? loaded.quizQuestions : defaultMasterConfig.quizQuestions,
+        futureChips: Array.isArray(loaded.futureChips) ? loaded.futureChips : defaultMasterConfig.futureChips,
+        cravingChips: Array.isArray(loaded.cravingChips) ? loaded.cravingChips : defaultMasterConfig.cravingChips
+      };
+    }
+
+    // Secret triple-tap on top-left crown icon opens Studio even when hidden in ?mode=her
+    function handleSecretCrownTap() {
+      secretCrownTaps++;
+      if (secretCrownTaps >= 3) {
+        secretCrownTaps = 0;
+        document.getElementById('creatorStudioBtn').classList.remove('hidden');
+        document.getElementById('quickSkipBtn').classList.remove('hidden');
+        openStudioModal('responses');
+        showToast("🔓 Boyfriend Master Studio Unlocked!");
+      }
+      setTimeout(() => { secretCrownTaps = 0; }, 1800);
+    }
+
+    // --- 5. FIREBASE REALTIME DATABASE REST API SYNC ---
+    function getCleanFirebaseBaseUrl() {
+      let url = (appConfig.firebaseUrl || DEFAULT_FIREBASE_URL).trim();
+      if (!url.startsWith('http')) url = 'https://' + url;
+      if (url.endsWith('/')) url = url.slice(0, -1);
+      return url;
+    }
+
+    async function loadConfigFromFirebaseCloud() {
+      const baseUrl = getCleanFirebaseBaseUrl();
+      try {
+        const res = await fetch(`${baseUrl}/config.json`);
+        if (res.ok) {
+          const cloudCfg = await res.json();
+          if (cloudCfg && typeof cloudCfg === 'object') {
+            appConfig = mergeWithDefaultConfig(cloudCfg);
+            localStorage.setItem('suu_bday_master_cfg', JSON.stringify(appConfig));
+          }
+          updateCloudBadge(true);
+        }
+      } catch (err) {
+        console.warn("Firebase load fallback to local:", err);
+        updateCloudBadge(false);
+      }
+    }
+
+    async function saveConfigToFirebaseCloud() {
+      const baseUrl = getCleanFirebaseBaseUrl();
+      localStorage.setItem('suu_bday_master_cfg', JSON.stringify(appConfig));
+      try {
+        const res = await fetch(`${baseUrl}/config.json`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(appConfig)
+        });
+        if (res.ok) {
+          updateCloudBadge(true);
+          return true;
+        }
+      } catch (err) {
+        console.error("Firebase save error:", err);
+        updateCloudBadge(false);
+      }
+      return false;
+    }
+
+    async function pushHerLiveProgressToFirebase() {
+      const baseUrl = getCleanFirebaseBaseUrl();
+      herSessionData.lastUpdatedAt = new Date().toLocaleString('en-IN');
+      herSessionData.timeSpentSeconds = Math.round((Date.now() - sessionStartTime) / 1000);
+
+      // Save locally too
+      localStorage.setItem('suu_bday_latest_response', JSON.stringify(herSessionData));
+
+      try {
+        await fetch(`${baseUrl}/responses/${herSessionData.sessionId}.json`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(herSessionData)
+        });
+      } catch (err) {
+        console.warn("Silent background sync failed:", err);
+      }
+    }
+
+    function updateCloudBadge(isOnline) {
+      const badge = document.getElementById('cloudStatusBadge');
+      if (!badge) return;
+      if (isOnline) {
+        badge.className = "text-[10px] font-extrabold bg-emerald-400 text-slate-950 px-2.5 py-0.5 rounded-full flex items-center gap-1";
+        badge.innerHTML = "<span>☁️ Firebase Live Connected</span>";
+      } else {
+        badge.className = "text-[10px] font-extrabold bg-amber-300 text-slate-950 px-2.5 py-0.5 rounded-full flex items-center gap-1";
+        badge.innerHTML = "<span>⚠️ Offline / Check Rules</span>";
+      }
+    }
+
+    async function testAndSyncFirebase() {
+      appConfig.firebaseUrl = document.getElementById('cfgFirebaseUrl').value.trim() || DEFAULT_FIREBASE_URL;
+      showToast("Syncing with Firebase Cloud... ☁️");
+      const ok = await saveConfigToFirebaseCloud();
+      if (ok) {
+        showToast("✅ Firebase Connected & Config Synced Successfully!");
+      } else {
+        showToast("⚠️ Could not write to Firebase. Make sure Test Mode is enabled!");
+      }
+    }
+
+    // --- 6. DYNAMIC STAGE NAVIGATION & PAGE MANAGER (ENABLE / DISABLE / SKIP) ---
+    function getEnabledStages() {
+      const enabled = appConfig.stages.filter(s => s.enabled);
+      return enabled.length > 0 ? enabled : [appConfig.stages[0]];
+    }
+
+    function goToEnabledStageByIndex(idx) {
+      const enabled = getEnabledStages();
+      if (idx < 0) idx = 0;
+      if (idx >= enabled.length) idx = enabled.length - 1;
+      currentStageIndex = idx;
+
+      const targetStageId = enabled[currentStageIndex].id;
+
+      // Hide all stage sections, show active
+      document.querySelectorAll('.stage-section').forEach(sec => {
+        if (sec.id === targetStageId) {
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+        }
+      });
+
+      // Handle floating Runaway 'No' button visibility
+      const noBtn = document.getElementById('multiNoBtn');
+      if (noBtn) {
+        if (targetStageId === 'stage-no-trap') {
+          noBtn.style.display = 'inline-block';
+          renderCurrentNoTrapRound();
+        } else {
+          noBtn.style.display = 'none';
+        }
+      }
+
+      if (targetStageId === 'stage-cake') {
+        setTimeout(initScratchCardCanvas, 80);
+      }
+
+      renderProgressDots();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      pushHerLiveProgressToFirebase();
+    }
+
+    function goToNextEnabledStage() {
+      const enabled = getEnabledStages();
+      if (currentStageIndex + 1 < enabled.length) {
+        playPopSound(620);
+        goToEnabledStageByIndex(currentStageIndex + 1);
+      } else {
+        showToast("🎉 Yeh aakhri page hai!");
+      }
+    }
+
+    function skipCurrentStage() {
+      const enabled = getEnabledStages();
+      const nextIdx = (currentStageIndex + 1) % enabled.length;
+      playPopSound(520);
+      goToEnabledStageByIndex(nextIdx);
+      showToast(`⏭️ Skipped to: ${enabled[nextIdx].title}`);
+    }
+
+    function renderProgressDots() {
+      const enabled = getEnabledStages();
+      const container = document.getElementById('progressDots');
+      container.innerHTML = '';
+      enabled.forEach((st, idx) => {
+        const btn = document.createElement('button');
+        btn.title = st.title;
+        btn.onclick = () => goToEnabledStageByIndex(idx);
+        if (idx === currentStageIndex) {
+          btn.className = "h-2.5 w-7 rounded-full bg-rose-500 transition-all duration-300";
+        } else if (idx < currentStageIndex) {
+          btn.className = "h-2 w-2.5 rounded-full bg-pink-400 transition-all duration-300";
+        } else {
+          btn.className = "h-2 w-2 rounded-full bg-pink-200 transition-all duration-300";
+        }
+        container.appendChild(btn);
+      });
+    }
+
+    // --- 7. RENDER ALL DYNAMIC CONTENT ACROSS STAGES ---
+    function renderAllAppContent() {
+      // 1. Names & Code Names
+      document.querySelectorAll('.her-name-slot').forEach(el => el.textContent = appConfig.herName);
+      document.querySelectorAll('.her-codename-slot').forEach(el => el.textContent = appConfig.herCodeName);
+      document.querySelectorAll('.his-name-slot').forEach(el => el.textContent = appConfig.hisName);
+
+      // 2. Stage 2: Multi-Question Runaway 'No' Trap
+      renderCurrentNoTrapRound();
+
+      // 3. Stage 3: Polaroid Photo Gallery
+      renderPolaroidGallery();
+
+      // 4. Stage 4: About Her Cards & Inside Jokes
+      renderAboutHerSection();
+
+      // 5. Stage 5: Fun Couple Quiz
+      renderCoupleQuizSection();
+
+      // 6. Stage 6: Customizable Future Plan & Craving Chips
+      renderFutureAndCravingChips();
+
+      // 7. Stage 7 & 8: Scratch Card & Love Letter
+      document.getElementById('scratchHiddenText').textContent = appConfig.scratchCardText;
+      document.getElementById('loveLetterBody').textContent = appConfig.letter;
+    }
+
+    // --- 8. STAGE 1: BIOMETRIC HEART SCANNER ---
+    let scanInProgress = false;
+    function startIdentityScan() {
+      if (scanInProgress) return;
+      scanInProgress = true;
+
+      const laser = document.getElementById('scanLaser');
+      const status = document.getElementById('scanStatusText');
+      const emoji = document.getElementById('scannerEmoji');
+      const sub = document.getElementById('scannerBtnSub');
+
+      laser.classList.remove('hidden');
+      emoji.textContent = "🔍";
+      sub.textContent = "Scanning...";
+      status.innerHTML = `<span class="text-rose-600 animate-pulse">Scanning Cuteness (1000%) & Nakhre Level... 📡</span>`;
+      playScannerBeeps();
+
+      setTimeout(() => {
+        laser.classList.add('hidden');
+        emoji.textContent = "👑";
+        sub.textContent = "Verified!";
+        status.innerHTML = `<span class="text-emerald-600 font-extrabold">✅ Identity Confirmed: ${escapeHTML(appConfig.herName)} (${escapeHTML(appConfig.herCodeName)})! 💖</span>`;
+        playSuccessChime();
+        burstConfetti(60);
+
+        setTimeout(() => {
+          scanInProgress = false;
+          goToNextEnabledStage();
+        }, 1000);
+      }, 1400);
+    }
+
+    // --- 9. STAGE 2: MULTI-QUESTION RUNAWAY 'NO' BUTTON TRAP ---
+    function renderCurrentNoTrapRound() {
+      const questions = appConfig.noTrapQuestions;
+      if (currentNoTrapRound >= questions.length) {
+        currentNoTrapRound = 0;
+      }
+      const qObj = questions[currentNoTrapRound];
+      document.getElementById('noTrapRoundBadge').textContent = `Sawaal ${currentNoTrapRound + 1} / ${questions.length}`;
+      document.getElementById('noTrapEmojiAvatar').textContent = qObj.emoji || "👑";
+      document.getElementById('noTrapQuestionTitle').textContent = qObj.question;
+      document.getElementById('multiYesBtnText').textContent = qObj.yesText;
+
+      const noBtn = document.getElementById('multiNoBtn');
+      const yesBtn = document.getElementById('multiYesBtn');
+      yesBtnScale = 1;
+      yesBtn.style.transform = 'scale(1)';
+
+      // Reset No button back beside Yes button at start of each new round
+      noBtn.textContent = qObj.noText;
+      noBtn.style.position = 'static';
+      noBtn.style.transform = 'scale(1) rotate(0deg)';
+      if (noBtn.parentElement !== yesBtn.parentElement) {
+        yesBtn.parentElement.appendChild(noBtn);
+      }
+    }
+
+    function setupRunawayNoButton() {
+      const noBtn = document.getElementById('multiNoBtn');
+
+      const dodgeHandler = (e) => {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        const enabled = getEnabledStages();
+        if (!enabled[currentStageIndex] || enabled[currentStageIndex].id !== 'stage-no-trap') return;
+
+        // Increment total and per-question Nakhre count
+        herSessionData.totalNakhreCount++;
+        const qKey = `Round_${currentNoTrapRound + 1}`;
+        herSessionData.nakhreByQuestion[qKey] = (herSessionData.nakhreByQuestion[qKey] || 0) + 1;
+
+        document.getElementById('nakhreCountVal').textContent = herSessionData.totalNakhreCount;
+        playBoingSound();
+
+        // Update taunt text
+        const taunt = gfRunawayTaunts[(herSessionData.totalNakhreCount - 1) % gfRunawayTaunts.length];
+        noBtn.textContent = taunt;
+        document.getElementById('noTrapFunnySub').textContent =
+          `Oho! Is sawaal pe ${herSessionData.nakhreByQuestion[qKey]} baar 'No' pakadne ki koshish ki! 😂`;
+
+        // Grow Yes button & slightly shrink/tilt No button
+        yesBtnScale = Math.min(1.35, yesBtnScale + 0.06);
+        const yesBtn = document.getElementById('multiYesBtn');
+        yesBtn.style.transform = `scale(${yesBtnScale})`;
+
+        if (noBtn.parentElement !== document.body) {
+          const rect = noBtn.getBoundingClientRect();
+          noBtn.style.position = 'fixed';
+          noBtn.style.left = `${rect.left}px`;
+          noBtn.style.top = `${rect.top}px`;
+          document.body.appendChild(noBtn);
+        }
+
+        const btnW = noBtn.offsetWidth || 180;
+        const btnH = noBtn.offsetHeight || 44;
+        const pad = 20;
+        const topSafe = 75;
+        const maxX = Math.max(pad, window.innerWidth - btnW - pad);
+        const maxY = Math.max(topSafe, window.innerHeight - btnH - pad);
+        const yesRect = yesBtn.getBoundingClientRect();
+
+        let newX, newY, tries = 0;
+        do {
+          newX = Math.floor(pad + Math.random() * (maxX - pad));
+          newY = Math.floor(topSafe + Math.random() * (maxY - topSafe));
+          tries++;
+        } while (
+          tries < 15 &&
+          newX + btnW > yesRect.left - 25 &&
+          newX < yesRect.right + 25 &&
+          newY + btnH > yesRect.top - 25 &&
+          newY < yesRect.bottom + 25
+        );
+
+        const randomTilt = (Math.random() - 0.5) * 18;
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+        noBtn.style.transform = `rotate(${randomTilt}deg)`;
+
+        pushHerLiveProgressToFirebase();
+      };
+
+      noBtn.addEventListener('mouseenter', dodgeHandler);
+      noBtn.addEventListener('touchstart', dodgeHandler, { passive: false });
+      noBtn.addEventListener('click', dodgeHandler);
+    }
+
+    function handleMultiNoTrapYes() {
+      playSuccessChime();
+      burstConfetti(45);
+
+      const questions = appConfig.noTrapQuestions;
+      if (currentNoTrapRound + 1 < questions.length) {
+        currentNoTrapRound++;
+        document.getElementById('noTrapFunnySub').textContent =
+          "Yay! Ekdum sahi jawab! Ab agle sawaal ka jawab do 😍👇";
+        renderCurrentNoTrapRound();
+      } else {
+        // Completed all Runaway 'No' rounds!
+        const noBtn = document.getElementById('multiNoBtn');
+        if (noBtn) noBtn.style.display = 'none';
+        currentNoTrapRound = 0;
+        burstConfetti(85);
+        goToNextEnabledStage();
+      }
+    }
+
+    // --- 10. STAGE 3: POLAROID PHOTO GALLERY & VOTING ---
+    function renderPolaroidGallery() {
+      const grid = document.getElementById('polaroidGalleryGrid');
+      grid.innerHTML = '';
+
+      appConfig.photos.forEach((photo, idx) => {
+        const isFav = herSessionData.favoritePhotoIndex === idx;
+        const rotation = idx % 2 === 0 ? '-1.2deg' : '1.2deg';
+        const card = document.createElement('div');
+        card.className = `polaroid-card flex flex-col justify-between ${isFav ? 'voted-favorite' : ''}`;
+        card.style.transform = `rotate(${rotation})`;
+
+        card.innerHTML = `
+          <div>
+            <div class="relative rounded-xl overflow-hidden bg-rose-50 aspect-[4/3] mb-2.5 cursor-pointer group" onclick="openPhotoLightbox(${idx})">
+              <img
+                src="${escapeHTML(photo.url)}"
+                alt="Memory ${idx + 1}"
+                onerror="this.src='https://placehold.co/600x450/ffe4e6/e11d48?text=Our+Special+Memory+%F0%9F%92%96'"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+              <span class="absolute top-2 left-2 bg-slate-900/70 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">
+                ${escapeHTML(photo.dateTag || `Photo #${idx + 1}`)}
+              </span>
+              <span class="absolute bottom-2 right-2 bg-white/90 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+                🔍 Tap to Zoom
+              </span>
+            </div>
+            <p class="handwritten text-lg sm:text-xl font-bold text-slate-800 leading-snug px-1 mb-2.5">
+              "${escapeHTML(photo.caption)}"
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="voteFavoritePhoto(${idx})"
+            class="w-full py-2 px-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5 ${
+              isFav
+                ? 'bg-rose-500 text-white shadow-md'
+                : 'bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200'
+            }"
+          >
+            <span>${isFav ? '❤️ #1 Favorite Selected!' : '🤍 Yeh Photo Mujhe Sabse Achhi Lagi'}</span>
+          </button>
+        `;
+        grid.appendChild(card);
+      });
+
+      if (appConfig.photos[herSessionData.favoritePhotoIndex]) {
+        herSessionData.favoritePhotoCaption = appConfig.photos[herSessionData.favoritePhotoIndex].caption;
+      }
+    }
+
+    function voteFavoritePhoto(idx) {
+      herSessionData.favoritePhotoIndex = idx;
+      herSessionData.favoritePhotoCaption = appConfig.photos[idx] ? appConfig.photos[idx].caption : `Photo #${idx + 1}`;
+      playPopSound(680);
+      burstConfetti(35);
+      renderPolaroidGallery();
+      showToast(`💖 Photo #${idx + 1} locked as your favorite!`);
+      pushHerLiveProgressToFirebase();
+    }
+
+    function openPhotoLightbox(idx) {
+      const p = appConfig.photos[idx];
+      if (!p) return;
+      document.getElementById('lightboxImg').src = p.url;
+      document.getElementById('lightboxCaption').textContent = p.caption;
+      const lb = document.getElementById('photoLightbox');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+
+    function closePhotoLightbox() {
+      const lb = document.getElementById('photoLightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+    }
+
+    function savePhotoMemoryAnswersAndNext() {
+      herSessionData.photoWhyLiked = document.getElementById('herPhotoWhyInput').value.trim();
+      herSessionData.bestTimeTogether = document.getElementById('herBestTimeInput').value.trim();
+      pushHerLiveProgressToFirebase();
+      goToNextEnabledStage();
+    }
+
+    // --- 11. STAGE 4: ABOUT HER + 1000% LOVE SLIDER ---
+    function renderAboutHerSection() {
+      const traitMeta = [
+        { icon: "😍", title: "Cuteness & Smile", badge: "1000% Overload ✨", color: "text-rose-600 bg-rose-50 border-rose-200" },
+        { icon: "⚡", title: "Gussa & Nakhre Meter", badge: "5G Speed 🔥", color: "text-purple-600 bg-purple-50 border-purple-200" },
+        { icon: "🎭", title: "Pyari Aadat", badge: "Heart Stealer 💖", color: "text-pink-600 bg-pink-50 border-pink-200" },
+        { icon: "👑", title: "Special Status", badge: "Permanent #1 🌹", color: "text-amber-700 bg-amber-50 border-amber-200" }
+      ];
+
+      const grid = document.getElementById('aboutHerGrid');
+      grid.innerHTML = '';
+      appConfig.traits.forEach((text, i) => {
+        const meta = traitMeta[i] || traitMeta[0];
+        const card = document.createElement('div');
+        card.className = "trait-card p-3.5 flex flex-col justify-between cursor-pointer";
+        card.onclick = () => {
+          playPopSound(600 + i * 40);
+          burstConfetti(15);
+        };
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-1 mb-1.5">
+              <span class="text-lg">${meta.icon}</span>
+              <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full border ${meta.color}">${meta.badge}</span>
+            </div>
+            <h4 class="font-extrabold text-xs sm:text-sm text-slate-800 mb-1">${meta.title}</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">${escapeHTML(text)}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      const jokesList = document.getElementById('insideJokesList');
+      jokesList.innerHTML = '';
+      appConfig.insideJokes.forEach(line => {
+        if (!line.trim()) return;
+        const div = document.createElement('div');
+        div.className = "bg-white/90 border border-amber-200 rounded-xl px-3 py-2 shadow-sm flex items-start gap-2";
+        div.innerHTML = `<span class="text-rose-500 mt-0.5">💖</span><span>${escapeHTML(line)}</span>`;
+        jokesList.appendChild(div);
+      });
+    }
+
+    function handleLoveSliderChange(val) {
+      const num = parseInt(val, 10);
+      const badge = document.getElementById('loveMeterValueBadge');
+      const fb = document.getElementById('loveSliderFeedback');
+
+      if (num < 250) {
+        // Funny bounce back to 1000%!
+        playBoingSound();
+        document.getElementById('loveMeterSlider').value = 1000;
+        herSessionData.loveSliderPercent = 1000;
+        badge.textContent = "1000% 💖";
+        fb.textContent = "😂 Jhooth mat bolo Madam Ji! Kam karne ki koshish nakam — Slider wapas 1000% pe चला gaya!";
+        burstConfetti(30);
+      } else {
+        herSessionData.loveSliderPercent = num;
+        badge.textContent = `${num}% 💖`;
+        fb.textContent = num >= 900 ? "🥰 Haan yeh hui na asli Birthday Queen wali baat!" : "Aur upar le jao 1000% tak! 😜📈";
+      }
+    }
+
+    function saveAboutStageAndNext() {
+      pushHerLiveProgressToFirebase();
+      goToNextEnabledStage();
+    }
+
+    // --- 12. STAGE 5: COUPLE QUIZ & POLL ---
+    function renderCoupleQuizSection() {
+      const container = document.getElementById('coupleQuizContainer');
+      container.innerHTML = '';
+
+      appConfig.quizQuestions.forEach((item, qIdx) => {
+        const selectedAns = herSessionData.quizAnswers[`Q${qIdx + 1}`] || "";
+        const box = document.createElement('div');
+        box.className = "bg-white border-2 border-pink-100 rounded-2xl p-4 shadow-sm";
+
+        let optsHtml = '';
+        item.options.forEach((optText) => {
+          const isSel = selectedAns === optText;
+          optsHtml += `
+            <button
+              type="button"
+              onclick="selectQuizOption(${qIdx}, '${escapeQuotes(optText)}')"
+              class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-between ${
+                isSel
+                  ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow'
+                  : 'bg-rose-50/60 hover:bg-rose-100/70 text-slate-700 border border-pink-200/60'
+              }"
+            >
+              <span>${escapeHTML(optText)}</span>
+              <span>${isSel ? '✅' : '👉'}</span>
+            </button>
+          `;
+        });
+
+        box.innerHTML = `
+          <h4 class="font-extrabold text-xs sm:text-sm text-slate-800 mb-2.5">${escapeHTML(item.q)}</h4>
+          <div class="space-y-2">${optsHtml}</div>
+        `;
+        container.appendChild(box);
+      });
+    }
+
+    function selectQuizOption(qIdx, answerText) {
+      herSessionData.quizAnswers[`Q${qIdx + 1}`] = answerText;
+      playPopSound(660);
+      renderCoupleQuizSection();
+      pushHerLiveProgressToFirebase();
+    }
+
+    function saveQuizAnswersAndNext() {
+      pushHerLiveProgressToFirebase();
+      goToNextEnabledStage();
+    }
+
+    // --- 13. STAGE 6: CUSTOMIZABLE FUTURE PLANS & CRAVINGS ---
+    function renderFutureAndCravingChips() {
+      const futureGrid = document.getElementById('futurePlanChipsGrid');
+      futureGrid.innerHTML = '';
+
+      appConfig.futureChips.forEach(chipText => {
+        const isSel = herSessionData.selectedFuturePlans.includes(chipText);
+        const div = document.createElement('div');
+        div.className = `selectable-card p-3 flex items-center justify-between gap-2 text-left ${isSel ? 'selected' : ''}`;
+        div.onclick = () => toggleFutureChipSelection(chipText);
+        div.innerHTML = `
+          <span class="font-bold text-slate-800 text-xs leading-snug">${escapeHTML(chipText)}</span>
+          <span class="text-sm shrink-0">${isSel ? '💖' : '➕'}</span>
+        `;
+        futureGrid.appendChild(div);
+      });
+
+      const cravingGrid = document.getElementById('cravingChipsGrid');
+      cravingGrid.innerHTML = '';
+
+      appConfig.cravingChips.forEach(foodText => {
+        const isSel = herSessionData.selectedCravings.includes(foodText);
+        const div = document.createElement('div');
+        div.className = `selectable-card p-2.5 flex items-center justify-between gap-1.5 text-left ${isSel ? 'selected' : ''}`;
+        div.onclick = () => toggleCravingChipSelection(foodText);
+        div.innerHTML = `
+          <span class="font-bold text-slate-800 text-xs">${escapeHTML(foodText)}</span>
+          <span class="text-xs shrink-0">${isSel ? '✅' : '🍴'}</span>
+        `;
+        cravingGrid.appendChild(div);
+      });
+    }
+
+    function toggleFutureChipSelection(chipText) {
+      if (herSessionData.selectedFuturePlans.includes(chipText)) {
+        herSessionData.selectedFuturePlans = herSessionData.selectedFuturePlans.filter(c => c !== chipText);
+        playPopSound(480);
+      } else {
+        herSessionData.selectedFuturePlans.push(chipText);
+        playPopSound(680);
+      }
+      renderFutureAndCravingChips();
+    }
+
+    function toggleCravingChipSelection(foodText) {
+      if (herSessionData.selectedCravings.includes(foodText)) {
+        herSessionData.selectedCravings = herSessionData.selectedCravings.filter(c => c !== foodText);
+        playPopSound(480);
+      } else {
+        herSessionData.selectedCravings.push(foodText);
+        playPopSound(680);
+      }
+      renderFutureAndCravingChips();
+    }
+
+    function saveFuturePlansAndNext() {
+      herSessionData.customFuturePlanText = document.getElementById('herFuturePlanTextInput').value.trim();
+      pushHerLiveProgressToFirebase();
+      goToNextEnabledStage();
+    }
+
+    // --- 14. STAGE 7: INTERACTIVE CAKE + GOLD FOIL SCRATCH CARD ---
+    function blowSingleCandle(idx) {
+      if (candlesBlown[idx]) return;
+      candlesBlown[idx] = true;
+
+      const flame = document.getElementById(`flame-${idx}`);
+      const smoke = document.getElementById(`smoke-${idx}`);
+      if (flame) flame.classList.add('hidden');
+      if (smoke) {
+        smoke.classList.remove('hidden');
+        smoke.classList.add('candle-smoke');
+      }
+
+      playBlowWhooshSound();
+      if (candlesBlown.every(Boolean)) {
+        document.getElementById('cakeInstructionText').innerHTML =
+          `<span class="text-rose-600 font-bold">🎉 Yay! Happy Birthday ${escapeHTML(appConfig.herName)}! Ab niche Gold Scratch Card ragdo! 🪙💖</span>`;
+        burstConfetti(120);
+        playHappyBirthdayMelody();
+      }
+    }
+
+    function blowAllCandles() {
+      candlesBlown.forEach((_, idx) => {
+        setTimeout(() => blowSingleCandle(idx), idx * 100);
+      });
+    }
+
+    function initScratchCardCanvas() {
+      const sc = document.getElementById('scratchCanvas');
+      if (!sc || sc.dataset.initialized === 'true') return;
+
+      const rect = sc.parentElement.getBoundingClientRect();
+      sc.width = rect.width || 300;
+      sc.height = rect.height || 105;
+      const ctx = sc.getContext('2d');
+
+      // Gold metallic gradient foil
+      const grad = ctx.createLinearGradient(0, 0, sc.width, sc.height);
+      grad.addColorStop(0, '#f59e0b');
+      grad.addColorStop(0.5, '#fde047');
+      grad.addColorStop(1, '#d97706');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, sc.width, sc.height);
+
+      ctx.fillStyle = '#78350f';
+      ctx.font = 'bold 14px Plus Jakarta Sans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('✨ RUB HERE TO SCRATCH GIFT ✨', sc.width / 2, sc.height / 2 + 5);
+
+      sc.dataset.initialized = 'true';
+      let isDrawing = false;
+
+      const scratchAt = (x, y) => {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 22, 0, Math.PI * 2);
+        ctx.fill();
+        if (!herSessionData.scratchCardRevealed) {
+          herSessionData.scratchCardRevealed = true;
+          burstConfetti(40);
+          pushHerLiveProgressToFirebase();
+        }
+      };
+
+      sc.addEventListener('mousedown', () => { isDrawing = true; });
+      window.addEventListener('mouseup', () => { isDrawing = false; });
+      sc.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
+        const r = sc.getBoundingClientRect();
+        scratchAt(e.clientX - r.left, e.clientY - r.top);
+      });
+
+      sc.addEventListener('touchstart', (e) => {
+        isDrawing = true;
+        const r = sc.getBoundingClientRect();
+        const t = e.touches[0];
+        scratchAt(t.clientX - r.left, t.clientY - r.top);
+      }, { passive: true });
+
+      sc.addEventListener('touchmove', (e) => {
+        if (!isDrawing) return;
+        const r = sc.getBoundingClientRect();
+        const t = e.touches[0];
+        scratchAt(t.clientX - r.left, t.clientY - r.top);
+      }, { passive: true });
+    }
+
+    // --- 15. STAGE 8: OPEN LOVE LETTER & SUBMIT EVERYTHING TO FIREBASE ---
+    function openSecretEnvelope() {
+      document.getElementById('closedEnvelopeView').classList.add('hidden');
+      document.getElementById('openedLetterView').classList.remove('hidden');
+      playSuccessChime();
+      burstConfetti(65);
+    }
+
+    async function submitAllHerAnswersToCloud() {
+      herSessionData.finalLoveMessageToHim = document.getElementById('herFinalMessageToHim').value.trim();
+      herSessionData.completedFullJourney = true;
+
+      const btn = document.getElementById('submitToCloudBtn');
+      btn.textContent = "☁️ Saving Your Answers To Him...";
+
+      await pushHerLiveProgressToFirebase();
+
+      btn.innerHTML = "✅ Sent Successfully To His Cloud Dashboard! 💖";
+      playHappyBirthdayMelody();
+      burstConfetti(140);
+
+      // Show VIP Pass Summary
+      const passBox = document.getElementById('finalVipPassBox');
+      passBox.classList.remove('hidden');
+
+      const summaryList = document.getElementById('finalPassSummaryList');
+      summaryList.innerHTML = `
+        <div class="flex justify-between"><span>👑 Birthday Queen:</span><span class="font-bold">${escapeHTML(appConfig.herName)} (${escapeHTML(appConfig.herCodeName)})</span></div>
+        <div class="flex justify-between"><span>😂 Total 'No' Button Nakhre:</span><span class="font-bold text-rose-600">${herSessionData.totalNakhreCount} times</span></div>
+        <div class="flex justify-between"><span>📸 Favorite Photo:</span><span class="font-bold text-purple-700">Photo #${herSessionData.favoritePhotoIndex + 1}</span></div>
+        <div class="pt-1 border-t border-pink-100"><b>⏳ Best Time Memory:</b> <span class="italic text-slate-600">${escapeHTML(herSessionData.bestTimeTogether || 'Sabhi din best the! ❤️')}</span></div>
+        <div><b>💭 Selected Future Plans:</b> <span class="text-rose-600 font-semibold">${escapeHTML(herSessionData.selectedFuturePlans.join(', ') || 'Surprise Plans ✨')}</span></div>
+        <div><b>✍️ Her Future Plan Note:</b> <span class="italic text-slate-600">${escapeHTML(herSessionData.customFuturePlanText || 'Saath mein achha time spend karna! 💖')}</span></div>
+        <div><b>💌 Her Final Message:</b> <span class="font-bold text-emerald-700">"${escapeHTML(herSessionData.finalLoveMessageToHim || 'Thank you for this special surprise! ❤️')}"</span></div>
+      `;
+
+      showToast("💖 Sab kuch Firebase Cloud pe save ho gaya!");
+    }
+
+    function copyWhatsAppSummary() {
+      const msg =
+        `👑 *BIRTHDAY QUEEN ANSWERS FOR ${appConfig.hisName.toUpperCase()}* 💖\n\n` +
+        `👸 *From:* ${appConfig.herName} (${appConfig.herCodeName})\n` +
+        `😂 *'No' Button Nakhre Count:* ${herSessionData.totalNakhreCount} times\n` +
+        `📸 *Favorite Photo:* Photo #${herSessionData.favoritePhotoIndex + 1} (${herSessionData.favoritePhotoCaption})\n` +
+        `💬 *Why I Liked That Photo:* "${herSessionData.photoWhyLiked || 'Bahut pyari photo hai!'}"\n` +
+        `⏳ *Best Time We Shared:* "${herSessionData.bestTimeTogether || 'Tumhare saath har din best hai!'}"\n` +
+        `💭 *Aage Ka Plan:* ${herSessionData.selectedFuturePlans.join(', ') || 'Special Time Together'}\n` +
+        `✍️ *Mera Plan / Wish:* "${herSessionData.customFuturePlanText || 'Surprise me!'}"\n` +
+        `🍕 *Food Cravings:* ${herSessionData.selectedCravings.join(', ') || 'Cake & Treat'}\n` +
+        `💌 *Mera Message Tumhare Liye:* "${herSessionData.finalLoveMessageToHim || 'Best birthday surprise ever! ❤️'}"`;
+
+      copyTextToClipboard(msg);
+      showToast("📲 Summary Copied! Ab WhatsApp pe paste kar do 💖");
+    }
+
+    function restartExperience() {
+      currentNoTrapRound = 0;
+      candlesBlown = [false, false, false, false, false];
+      for (let i = 0; i < 5; i++) {
+        const f = document.getElementById(`flame-${i}`);
+        const s = document.getElementById(`smoke-${i}`);
+        if (f) f.classList.remove('hidden');
+        if (s) s.classList.add('hidden');
+      }
+      document.getElementById('closedEnvelopeView').classList.remove('hidden');
+      document.getElementById('openedLetterView').classList.add('hidden');
+      document.getElementById('finalVipPassBox').classList.add('hidden');
+      goToEnabledStageByIndex(0);
+    }
+
+    // =========================================================================
+    // 16. BOYFRIEND MASTER STUDIO FUNCTIONS (3 TABS: PAGES, EDIT, LIVE ANSWERS)
+    // =========================================================================
+    function openStudioModal(defaultTab = 'pages') {
+      playPopSound(550);
+      populateStudioInputs();
+      const modal = document.getElementById('studioModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      switchStudioTab(defaultTab);
+    }
+
+    function closeStudioModal() {
+      const modal = document.getElementById('studioModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function switchStudioTab(tabName) {
+      ['pages', 'customize', 'responses'].forEach(t => {
+        const tabDiv = document.getElementById(`studioTab-${t}`);
+        const tabBtn = document.getElementById(`tabBtn-${t}`);
+        if (t === tabName) {
+          tabDiv.classList.remove('hidden');
+          tabBtn.className = "px-3.5 py-2 rounded-t-xl font-extrabold text-xs sm:text-sm bg-white text-rose-600 border-t border-x border-pink-200 flex items-center gap-1.5";
+        } else {
+          tabDiv.classList.add('hidden');
+          tabBtn.className = "px-3.5 py-2 rounded-t-xl font-bold text-xs sm:text-sm text-slate-600 hover:bg-white/60 flex items-center gap-1.5";
+        }
+      });
+
+      if (tabName === 'responses') {
+        fetchHerResponsesFromFirebase();
+      }
+    }
+
+    function populateStudioInputs() {
+      document.getElementById('cfgFirebaseUrl').value = appConfig.firebaseUrl || DEFAULT_FIREBASE_URL;
+      document.getElementById('cfgHerName').value = appConfig.herName;
+      document.getElementById('cfgHerCodeName').value = appConfig.herCodeName;
+      document.getElementById('cfgHisName').value = appConfig.hisName;
+
+      document.getElementById('cfgTrait0').value = appConfig.traits[0] || "";
+      document.getElementById('cfgTrait1').value = appConfig.traits[1] || "";
+      document.getElementById('cfgTrait2').value = appConfig.traits[2] || "";
+      document.getElementById('cfgTrait3').value = appConfig.traits[3] || "";
+      document.getElementById('cfgInsideJokes').value = appConfig.insideJokes.join('\n');
+      document.getElementById('cfgScratchText').value = appConfig.scratchCardText || "";
+      document.getElementById('cfgLetter').value = appConfig.letter || "";
+
+      renderPageManagerList();
+      renderNoTrapEditorList();
+      renderPhotoEditorList();
+      renderChipsEditorLists();
+    }
+
+    // --- TAB 1: PAGE MANAGER (HIDE / ENABLE / JUMP / REORDER) ---
+    function renderPageManagerList() {
+      const list = document.getElementById('pageManagerList');
+      list.innerHTML = '';
+
+      appConfig.stages.forEach((st, idx) => {
+        const row = document.createElement('div');
+        row.className = `p-3 rounded-2xl border flex flex-wrap items-center justify-between gap-2 transition ${
+          st.enabled ? 'bg-white border-pink-200 shadow-sm' : 'bg-slate-100 border-slate-200 opacity-60'
+        }`;
+
+        row.innerHTML = `
+          <div class="flex items-center gap-2.5">
+            <input
+              type="checkbox"
+              ${st.enabled ? 'checked' : ''}
+              onchange="toggleStageEnabled(${idx}, this.checked)"
+              class="w-4 h-4 accent-rose-600 rounded cursor-pointer"
+            />
+            <div>
+              <div class="font-extrabold text-xs sm:text-sm text-slate-800">${escapeHTML(st.title)}</div>
+              <div class="text-[10px] font-bold ${st.enabled ? 'text-emerald-600' : 'text-rose-500'}">
+                ${st.enabled ? '✅ Visible to Her' : '🚫 Hidden / Deleted For Her'}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="moveStageOrder(${idx}, -1)" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold" title="Move Up">↑</button>
+            <button type="button" onclick="moveStageOrder(${idx}, 1)" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold" title="Move Down">↓</button>
+            <button type="button" onclick="previewSpecificStage('${st.id}')" class="px-3 py-1 rounded-lg bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs font-bold">
+              👁️ Jump / Preview
+            </button>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    function toggleStageEnabled(idx, isChecked) {
+      appConfig.stages[idx].enabled = isChecked;
+      if (appConfig.stages.every(s => !s.enabled)) {
+        appConfig.stages[idx].enabled = true;
+        showToast("⚠️ Kam se kam 1 page ON rehna zaroori hai!");
+      }
+      renderPageManagerList();
+      renderProgressDots();
+    }
+
+    function moveStageOrder(idx, dir) {
+      const target = idx + dir;
+      if (target < 0 || target >= appConfig.stages.length) return;
+      const temp = appConfig.stages[idx];
+      appConfig.stages[idx] = appConfig.stages[target];
+      appConfig.stages[target] = temp;
+      renderPageManagerList();
+      renderProgressDots();
+    }
+
+    function previewSpecificStage(stageId) {
+      const stObj = appConfig.stages.find(s => s.id === stageId);
+      if (stObj && !stObj.enabled) {
+        stObj.enabled = true;
+      }
+      closeStudioModal();
+      const enabled = getEnabledStages();
+      const targetIdx = enabled.findIndex(s => s.id === stageId);
+      if (targetIdx !== -1) {
+        goToEnabledStageByIndex(targetIdx);
+      }
+    }
+
+    // --- TAB 2: RUNAWAY 'NO' QUESTIONS EDITOR ---
+    function renderNoTrapEditorList() {
+      const container = document.getElementById('noTrapEditorList');
+      container.innerHTML = '';
+
+      appConfig.noTrapQuestions.forEach((q, idx) => {
+        const box = document.createElement('div');
+        box.className = "bg-white p-3 rounded-xl border border-purple-200 space-y-2";
+        box.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold text-purple-700">Round #${idx + 1} Runaway 'No' Question</span>
+            <button type="button" onclick="deleteNoTrapQuestion(${idx})" class="text-xs font-bold text-rose-600 hover:underline">✕ Delete Question</button>
+          </div>
+          <input
+            type="text"
+            value="${escapeHTML(q.question)}"
+             oninput="appConfig.noTrapQuestions[${idx}].question = this.value"
+            placeholder="Sawaal likhein..."
+            class="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold"
+          />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <input
+              type="text"
+              value="${escapeHTML(q.yesText)}"
+              oninput="appConfig.noTrapQuestions[${idx}].yesText = this.value"
+              placeholder="Yes Button Text"
+              class="px-3 py-1.5 rounded-lg border border-emerald-200 bg-emerald-50/40 text-xs font-bold text-emerald-800"
+            />
+            <input
+              type="text"
+              value="${escapeHTML(q.noText)}"
+              oninput="appConfig.noTrapQuestions[${idx}].noText = this.value"
+              placeholder="Runaway No Button Text"
+              class="px-3 py-1.5 rounded-lg border border-rose-200 bg-rose-50/40 text-xs font-bold text-rose-800"
+            />
+          </div>
+        `;
+        container.appendChild(box);
+      });
+    }
+
+    function addNewNoTrapQuestion() {
+      appConfig.noTrapQuestions.push({
+        emoji: "💖",
+        question: "Ek aur sach batao... meri banayi hui yeh website duniya ka sabse cute birthday gift hai na? 😍",
+        yesText: "Haan 1000% Sabse Best Hai! 💖",
+        noText: "Thoda aur sochungi 😜"
+      });
+      renderNoTrapEditorList();
+      showToast("✅ Naya Runaway 'No' Sawaal Jud Gaya!");
+    }
+
+    function deleteNoTrapQuestion(idx) {
+      if (appConfig.noTrapQuestions.length <= 1) {
+        showToast("⚠️ Kam se kam 1 question rehna chahiye (Ya Page Manager se page hide kar dein)!");
+        return;
+      }
+      appConfig.noTrapQuestions.splice(idx, 1);
+      renderNoTrapEditorList();
+    }
+
+    // --- TAB 2: PHOTO UPLOAD & GALLERY EDITOR (AUTO-COMPRESSED FOR FIREBASE) ---
+    function renderPhotoEditorList() {
+      const list = document.getElementById('photoEditorList');
+      list.innerHTML = '';
+
+      appConfig.photos.forEach((p, idx) => {
+        const card = document.createElement('div');
+        card.className = "bg-white p-3 rounded-xl border border-pink-200 space-y-2 flex flex-col justify-between";
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5">
+            <img src="${escapeHTML(p.url)}" class="w-14 h-14 rounded-lg object-cover bg-rose-50 border border-pink-100 shrink-0" onerror="this.src='https://placehold.co/100x100/ffe4e6/e11d48?text=Photo'" />
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold text-pink-700">Photo #${idx + 1}</span>
+                <button type="button" onclick="deletePhotoSlot(${idx})" class="text-[11px] font-bold text-rose-600">✕ Remove</button>
+              </div>
+              <input
+                type="text"
+                value="${escapeHTML(p.dateTag || '')}"
+                oninput="appConfig.photos[${idx}].dateTag = this.value"
+                placeholder="Tag (e.g. Best Day 💖)"
+                class="w-full mt-1 px-2 py-1 rounded border border-slate-200 text-[11px] font-bold"
+              />
+            </div>
+          </div>
+          <input
+            type="text"
+            value="${escapeHTML(p.caption)}"
+            oninput="appConfig.photos[${idx}].caption = this.value"
+            placeholder="Is photo ke baare mein pyari line likho..."
+            class="w-full px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold"
+          />
+          <input
+            type="text"
+            value="${escapeHTML(p.url)}"
+            oninput="appConfig.photos[${idx}].url = this.value"
+            placeholder="Image URL or Uploaded Data"
+            class="w-full px-2 py-1 rounded border border-slate-100 text-[10px] text-slate-400"
+          />
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function handleGalleryPhotoUpload(event) {
+      const files = Array.from(event.target.files || []);
+      if (files.length === 0) return;
+
+      showToast("📸 Compressing & adding your photos...");
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            // Compress image to max 600px width JPEG (0.72 quality) so Firebase RTDB stores it effortlessly
+            const canvas = document.createElement('canvas');
+            const maxDim = 600;
+            let w = img.width;
+            let h = img.height;
+            if (w > h && w > maxDim) {
+              h = Math.round((h * maxDim) / w);
+              w = maxDim;
+            } else if (h > maxDim) {
+              w = Math.round((w * maxDim) / h);
+              h = maxDim;
+            }
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.72);
+
+            appConfig.photos.unshift({
+              url: compressedDataUrl,
+              caption: "Hamara Ek Aur Yaadgaar Pal 💖",
+              dateTag: "Our Special Memory ✨"
+            });
+            renderPhotoEditorList();
+            renderPolaroidGallery();
+            showToast("✅ Photo Added! Niche 'Save to Cloud' zaroor dabayein.");
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function addEmptyPhotoSlot() {
+      appConfig.photos.push({
+        url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80",
+        caption: "Nayi Yaadgaar Photo 💖",
+        dateTag: "Special Day ✨"
+      });
+      renderPhotoEditorList();
+    }
+
+    function deletePhotoSlot(idx) {
+      if (appConfig.photos.length <= 1) {
+        showToast("⚠️ Kam se kam 1 photo rehni chahiye!");
+        return;
+      }
+      appConfig.photos.splice(idx, 1);
+      renderPhotoEditorList();
+    }
+
+    // --- TAB 2: DELETE OR ADD CUSTOM CHIPS (FUTURE PLANS & CRAVINGS) ---
+    function renderChipsEditorLists() {
+      const fContainer = document.getElementById('editorFutureChips');
+      fContainer.innerHTML = '';
+      appConfig.futureChips.forEach((chip, idx) => {
+        const span = document.createElement('span');
+        span.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-emerald-300 text-xs font-bold text-slate-700";
+        span.innerHTML = `
+          <span>${escapeHTML(chip)}</span>
+          <button type="button" onclick="removeFutureChip(${idx})" class="text-rose-600 font-extrabold hover:scale-125">✕</button>
+        `;
+        fContainer.appendChild(span);
+      });
+
+      const cContainer = document.getElementById('editorCravingChips');
+      cContainer.innerHTML = '';
+      appConfig.cravingChips.forEach((chip, idx) => {
+        const span = document.createElement('span');
+        span.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-emerald-300 text-xs font-bold text-slate-700";
+        span.innerHTML = `
+          <span>${escapeHTML(chip)}</span>
+          <button type="button" onclick="removeCravingChip(${idx})" class="text-rose-600 font-extrabold hover:scale-125">✕</button>
+        `;
+        cContainer.appendChild(span);
+      });
+    }
+
+    function removeFutureChip(idx) {
+      appConfig.futureChips.splice(idx, 1);
+      renderChipsEditorLists();
+    }
+
+    function addCustomFutureChip() {
+      const inp = document.getElementById('newFutureChipInput');
+      const val = inp.value.trim();
+      if (!val) return;
+      appConfig.futureChips.push(val);
+      inp.value = '';
+      renderChipsEditorLists();
+    }
+
+    function removeCravingChip(idx) {
+      appConfig.cravingChips.splice(idx, 1);
+      renderChipsEditorLists();
+    }
+
+    function addCustomCravingChip() {
+      const inp = document.getElementById('newCravingChipInput');
+      const val = inp.value.trim();
+      if (!val) return;
+      appConfig.cravingChips.push(val);
+      inp.value = '';
+      renderChipsEditorLists();
+    }
+
+    function setQuickCodeName(name) {
+      document.getElementById('cfgHerCodeName').value = name;
+      playPopSound(650);
+    }
+
+    function applyLetterTemplate(idx) {
+      if (letterTemplates[idx]) {
+        document.getElementById('cfgLetter').value = letterTemplates[idx];
+        showToast("✍️ Template loaded!");
+      }
+    }
+
+    async function saveEverythingToCloud(copyHerLink) {
+      appConfig.firebaseUrl = document.getElementById('cfgFirebaseUrl').value.trim() || DEFAULT_FIREBASE_URL;
+      appConfig.herName = document.getElementById('cfgHerName').value.trim() || "Suu";
+      appConfig.herCodeName = document.getElementById('cfgHerCodeName').value.trim() || "Madam Ji 👑";
+      appConfig.hisName = document.getElementById('cfgHisName').value.trim() || "Arijit ❤️";
+
+      appConfig.traits = [
+        document.getElementById('cfgTrait0').value.trim() || defaultMasterConfig.traits[0],
+        document.getElementById('cfgTrait1').value.trim() || defaultMasterConfig.traits[1],
+        document.getElementById('cfgTrait2').value.trim() || defaultMasterConfig.traits[2],
+        document.getElementById('cfgTrait3').value.trim() || defaultMasterConfig.traits[3]
+      ];
+
+      const jokesRaw = document.getElementById('cfgInsideJokes').value.split('\n').map(s => s.trim()).filter(Boolean);
+      appConfig.insideJokes = jokesRaw.length > 0 ? jokesRaw : defaultMasterConfig.insideJokes;
+      appConfig.scratchCardText = document.getElementById('cfgScratchText').value.trim() || defaultMasterConfig.scratchCardText;
+      appConfig.letter = document.getElementById('cfgLetter').value.trim() || defaultMasterConfig.letter;
+
+      renderAllAppContent();
+      goToEnabledStageByIndex(0);
+
+      showToast("☁️ Saving your setup & photos to Firebase...");
+      await saveConfigToFirebaseCloud();
+
+      if (copyHerLink) {
+        const shareUrl = new URL(window.location.href);
+        shareUrl.searchParams.set('mode', 'her');
+        copyTextToClipboard(shareUrl.toString());
+        closeStudioModal();
+        burstConfetti(70);
+        showToast(`🔗 Link Copied for ${appConfig.herName}! (Is link mein Customize button chhupa rahega 💖)`);
+      } else {
+        closeStudioModal();
+        showToast("✅ Saved to Firebase Cloud & Updated Preview!");
+      }
+    }
+
+    // --- TAB 3: FETCH & DISPLAY HER LIVE RESPONSES FROM FIREBASE ---
+    async function fetchHerResponsesFromFirebase() {
+      const container = document.getElementById('liveResponsesContainer');
+      const baseUrl = getCleanFirebaseBaseUrl();
+      container.innerHTML = `<div class="p-6 text-center text-slate-500 text-xs font-bold">🔄 Fetching latest answers from ${escapeHTML(baseUrl)}...</div>`;
+
+      try {
+        const res = await fetch(`${baseUrl}/responses.json`);
+        const data = await res.json();
+
+        if (!data || typeof data !== 'object') {
+          container.innerHTML = `
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+              <div class="text-3xl mb-2">📭</div>
+              <h5 class="font-bold text-slate-700 text-sm">Abhi tak koi response nahi aaya hai!</h5>
+              <p class="text-xs text-slate-500 mt-1">Jab aapki GF link kholengi aur buttons dabayengi, unka har ek click aur jawab yahan live dikhega.</p>
+            </div>
+          `;
+          document.getElementById('responseCountPill').textContent = "0";
+          return;
+        }
+
+        const entries = Object.values(data).reverse();
+        document.getElementById('responseCountPill').textContent = String(entries.length);
+        document.getElementById('liveBadgeCount').classList.remove('hidden');
+
+        container.innerHTML = '';
+        entries.forEach((item, idx) => {
+          const nakhreBreak = item.nakhreByQuestion
+            ? Object.entries(item.nakhreByQuestion).map(([k, v]) => `${k}: ${v}x`).join(', ')
+            : 'None';
+
+          const quizSummary = item.quizAnswers
+            ? Object.entries(item.quizAnswers).map(([k, v]) => `<div class="text-xs"><b>${escapeHTML(k)}:</b> ${escapeHTML(v)}</div>`).join('')
+            : '<div class="text-xs text-slate-400">Not answered yet</div>';
+
+          const card = document.createElement('div');
+          card.className = "bg-white border-2 border-pink-200 rounded-2xl p-4 shadow-sm space-y-2.5";
+          card.innerHTML = `
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-pink-100 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-rose-500 text-white text-[11px] font-extrabold">
+                  Session #${entries.length - idx}
+                </span>
+                <span class="text-xs font-bold text-slate-500">🕒 ${escapeHTML(item.lastUpdatedAt || item.startedAt || '')}</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold ${
+                item.completedFullJourney ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+              }">
+                ${item.completedFullJourney ? '✅ Completed Full Surprise' : '👀 Currently Viewing Live'} • ⏱️ ${item.timeSpentSeconds || 0}s spent
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              <div class="bg-rose-50/70 p-2.5 rounded-xl border border-rose-100">
+                <div class="font-extrabold text-rose-700 mb-0.5">😂 Runaway 'No' Nakhre Count:</div>
+                <div class="font-bold text-slate-800 text-sm">${item.totalNakhreCount || 0} Attempts</div>
+                <div class="text-[11px] text-slate-500">${escapeHTML(nakhreBreak)}</div>
+              </div>
+
+              <div class="bg-purple-50/70 p-2.5 rounded-xl border border-purple-100">
+                <div class="font-extrabold text-purple-800 mb-0.5">📸 Voted #1 Favorite Photo:</div>
+                <div class="font-bold text-slate-800">Photo #${(item.favoritePhotoIndex || 0) + 1}</div>
+                <div class="text-[11px] text-slate-600 italic">"${escapeHTML(item.favoritePhotoCaption || '')}"</div>
+              </div>
+            </div>
+
+            <div class="bg-pink-50/60 p-3 rounded-xl border border-pink-100 space-y-1.5 text-xs">
+              <div><b class="text-rose-700">📸 Why She Liked That Photo:</b> <span class="text-slate-800 font-semibold">${escapeHTML(item.photoWhyLiked || '—')}</span></div>
+              <div><b class="text-purple-700">⏳ Her Favorite Time / Day Together:</b> <span class="text-slate-800 font-semibold">${escapeHTML(item.bestTimeTogether || '—')}</span></div>
+              <div><b class="text-emerald-700">💭 Selected Future Plans:</b> <span class="text-slate-800 font-semibold">${escapeHTML((item.selectedFuturePlans || []).join(', ') || '—')}</span></div>
+              <div><b class="text-emerald-800">✍️ What She Wrote For Future Plan:</b> <span class="text-slate-800 font-semibold">${escapeHTML(item.customFuturePlanText || '—')}</span></div>
+              <div><b class="text-amber-800">🍕 Selected Food Cravings:</b> <span class="text-slate-800 font-semibold">${escapeHTML((item.selectedCravings || []).join(', ') || '—')}</span></div>
+            </div>
+
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+              <div class="text-[11px] font-extrabold text-slate-600 mb-1">🎮 Couple Quiz Answers:</div>
+              ${quizSummary}
+            </div>
+
+            <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-3 rounded-xl border border-rose-300">
+              <div class="text-xs font-extrabold text-rose-800 mb-0.5">💌 Her Final Return Message For You:</div>
+              <div class="text-sm font-bold text-slate-900 whitespace-pre-line">"${escapeHTML(item.finalLoveMessageToHim || 'Abhi final message type nahi kiya hai...')}"</div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      } catch (err) {
+        container.innerHTML = `<div class="p-4 bg-rose-50 text-rose-700 rounded-xl text-xs font-bold">Could not load responses from Firebase. Ensure your database URL & Test Mode rules are active.</div>`;
+      }
+    }
+
+    async function clearFirebaseResponses() {
+      const baseUrl = getCleanFirebaseBaseUrl();
+      try {
+        await fetch(`${baseUrl}/responses.json`, { method: 'DELETE' });
+        showToast("🗑️ Cleared old test responses from Firebase!");
+        fetchHerResponsesFromFirebase();
+      } catch (e) {}
+    }
+
+    // --- 17. WEB AUDIO SYNTHESIZER & CONFETTI ---
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      document.getElementById('soundIcon').textContent = soundEnabled ? '🔊' : '🔇';
+      document.getElementById('soundLabel').textContent = soundEnabled ? 'Sound On' : 'Muted';
+      if (soundEnabled) playPopSound(600);
+    }
+
+    function playPopSound(freq = 540) {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(freq * 1.4, ctx.currentTime + 0.09);
+      gain.gain.setValueAtTime(0.14, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.09);
+    }
+
+    function playBoingSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      const startFreq = 280 + Math.random() * 150;
+      osc.frequency.setValueAtTime(startFreq, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(startFreq * 2.2, ctx.currentTime + 0.16);
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.17);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.17);
+    }
+
+    function playScannerBeeps() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      [680, 820, 740, 960].forEach((f, idx) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const t = ctx.currentTime + idx * 0.22;
+        osc.frequency.setValueAtTime(f, t);
+        gain.gain.setValueAtTime(0.1, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.13);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.13);
+      });
+    }
+
+    function playBlowWhooshSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(340, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 0.22);
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.22);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.22);
+    }
+
+    function playSuccessChime() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        const st = ctx.currentTime + i * 0.08;
+        osc.frequency.setValueAtTime(freq, st);
+        gain.gain.setValueAtTime(0.15, st);
+        gain.gain.exponentialRampToValueAtTime(0.001, st + 0.28);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(st);
+        osc.stop(st + 0.28);
+      });
+    }
+
+    function playHappyBirthdayMelody() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const melody = [
+        { f: 392.00, d: 0.24, t: 0.00 }, { f: 392.00, d: 0.20, t: 0.26 },
+        { f: 440.00, d: 0.40, t: 0.48 }, { f: 392.00, d: 0.40, t: 0.92 },
+        { f: 523.25, d: 0.40, t: 1.36 }, { f: 493.88, d: 0.68, t: 1.80 },
+        { f: 392.00, d: 0.24, t: 2.58 }, { f: 392.00, d: 0.20, t: 2.84 },
+        { f: 440.00, d: 0.40, t: 3.06 }, { f: 392.00, d: 0.40, t: 3.50 },
+        { f: 587.33, d: 0.40, t: 3.94 }, { f: 523.25, d: 0.75, t: 4.38 }
+      ];
+      melody.forEach(note => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const st = ctx.currentTime + note.t;
+        osc.frequency.setValueAtTime(note.f, st);
+        gain.gain.setValueAtTime(0.15, st);
+        gain.gain.exponentialRampToValueAtTime(0.001, st + note.d);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(st);
+        osc.stop(st + note.d);
+      });
+    }
+
+    // --- 18. FLOATING HEARTS, CONFETTI & HELPERS ---
+    function initFloatingElements() {
+      const container = document.getElementById('floatingBg');
+      const items = ['💖', '🎂', '🌸', '✨', '👑', '🌹', '🦋', '💝', '🍫', '🎈'];
+      for (let i = 0; i < 18; i++) {
+        const span = document.createElement('span');
+        span.className = 'floating-item';
+        span.textContent = items[i % items.length];
+        span.style.left = `${Math.random() * 96}vw`;
+        span.style.fontSize = `${16 + Math.random() * 18}px`;
+        span.style.animationDuration = `${11 + Math.random() * 13}s`;
+        span.style.animationDelay = `-${Math.random() * 15}s`;
+        container.appendChild(span);
+      }
+    }
+
+    const canvas = document.getElementById('confettiCanvas');
+    const cCtx = canvas.getContext('2d');
+    let particles = [];
+    let animRunning = false;
+
+    function resizeConfettiCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function burstConfetti(count = 80) {
+      const colors = ['#f43f5e', '#ec4899', '#a855f7', '#facc15', '#fb7185', '#34d399'];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 160,
+          y: window.innerHeight / 2 + (Math.random() - 0.5) * 90,
+          vx: (Math.random() - 0.5) * 15,
+          vy: -(Math.random() * 13 + 5),
+          size: 6 + Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          opacity: 1
+        });
+      }
+      if (!animRunning) {
+        animRunning = true;
+        requestAnimationFrame(renderConfetti);
+      }
+    }
+
+    function renderConfetti() {
+      cCtx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.34;
+        p.vx *= 0.99;
+        p.rot += p.rotSpeed;
+        p.opacity -= 0.008;
+        if (p.opacity <= 0 || p.y > canvas.height + 30) {
+          particles.splice(i, 1);
+          continue;
+        }
+        cCtx.save();
+        cCtx.globalAlpha = Math.max(0, p.opacity);
+        cCtx.translate(p.x, p.y);
+        cCtx.rotate((p.rot * Math.PI) / 180);
+        cCtx.fillStyle = p.color;
+        cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+        cCtx.restore();
+      }
+      if (particles.length > 0) {
+        requestAnimationFrame(renderConfetti);
+      } else {
+        animRunning = false;
+      }
+    }
+
+    function escapeHTML(str) {
+      return String(str || '')
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeQuotes(str) {
+      return String(str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    }
+
+    function copyTextToClipboard(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastBanner');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 3100);
+    }
+  </script>
+</body>
+</html>
